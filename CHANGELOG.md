@@ -2,6 +2,12 @@
 
 Changes to the skill, newest first.
 
+## 1.3.0 — 2026-10-22
+
+- Added presets: `adr`, `rfc`, `prd`, `api-spec`, `post-mortem`, `runbook`, `migration-plan`, `release-notes`, `threat-model`, `checklist`.
+- Updated the preset registry and extension guide.
+- Added the motivation for a known, defined schema that makes Markdown documents transportable.
+
 ## 1.2.0 — 2026-10-22
 
 - Added `README.md` with usage, structure, installation, and maintenance notes.

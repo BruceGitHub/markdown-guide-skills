@@ -6,6 +6,16 @@ Presets add rules for a document type. Core rules stay active. A preset cannot r
 | --- | --- | --- | --- | --- | --- |
 | project | [project.md](./project.md) | 1.0.0 | active | project, plan, specification, architecture, decision | — |
 | meeting-notes | [meeting-notes.md](./meeting-notes.md) | 1.0.0 | active | meeting, minutes | — |
+| adr | [adr.md](./adr.md) | 1.0.0 | active | adr, architecture decision, decision record | — |
+| rfc | [rfc.md](./rfc.md) | 1.0.0 | active | rfc, proposal, design proposal | — |
+| prd | [prd.md](./prd.md) | 1.0.0 | active | prd, product requirements, requirements | — |
+| api-spec | [api-spec.md](./api-spec.md) | 1.0.0 | active | api, api spec, endpoint, contract | — |
+| post-mortem | [post-mortem.md](./post-mortem.md) | 1.0.0 | active | post-mortem, incident, outage, incident review | — |
+| runbook | [runbook.md](./runbook.md) | 1.0.0 | active | runbook, operations, procedure, playbook | — |
+| migration-plan | [migration-plan.md](./migration-plan.md) | 1.0.0 | active | migration, cutover, rollout | — |
+| release-notes | [release-notes.md](./release-notes.md) | 1.0.0 | active | release, release notes, changelog | — |
+| threat-model | [threat-model.md](./threat-model.md) | 1.0.0 | active | threat model, security, risk assessment | — |
+| checklist | [checklist.md](./checklist.md) | 1.0.0 | active | checklist, verification, operations | — |
 
 ## Selection
 
@@ -14,6 +24,7 @@ Presets add rules for a document type. Core rules stay active. A preset cannot r
 - Load presets listed in `requires` first.
 - Ignore presets with `status: disabled`.
 - If two presets overlap, apply both and record the conflict in `## Constraints`.
+- Prefer the narrowest preset. Use `project` only when no more specific preset fits.
 
 ## Adding a preset
 

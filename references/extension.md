@@ -56,7 +56,7 @@ Rules:
 - If two presets overlap, apply both and record the conflict in `## Constraints`.
 - A disabled preset is ignored.
 - Load presets listed in `requires` first.
-- The `project` preset is mandatory for project documents.
+- Use the narrowest preset that fits. Use `project` for project documents that do not match a more specific preset.
 
 ### Add a preset
 
@@ -133,7 +133,7 @@ Rules:
 
 ## Template
 
-Templates in `templates/` are skeletons. A user-specified template takes precedence over built-in templates.
+Templates in `templates/` are skeletons. Each preset also contains a mandatory structure block that can be used as a template for that document type. A user-specified template takes precedence over built-in templates.
 
 Rules:
 
@@ -160,5 +160,15 @@ Included presets:
 
 - `project` — project document with DP, DA, DF, references, and history.
 - `meeting-notes` — meeting notes with decisions and actions.
+- `adr` — architecture decision record.
+- `rfc` — design proposal with open questions and decisions.
+- `prd` — product requirements with goals, requirements, and metrics.
+- `api-spec` — API contract with endpoints, schemas, errors, and examples.
+- `post-mortem` — incident review with timeline, causes, and actions.
+- `runbook` — operational procedure with verification, rollback, and escalation.
+- `migration-plan` — migration or cutover with validation, rollback, and communication.
+- `release-notes` — release highlights, breaking changes, features, fixes, and upgrades.
+- `threat-model` — assets, trust boundaries, threats, mitigations, and residual risks.
+- `checklist` — repeatable checks with owners, expected results, and exceptions.
 
-Next presets to add gradually: `adr`, `runbook`, `api-spec`, `post-mortem`. Every new preset follows the format above and does not modify the core.
+Every new preset follows the format above and does not modify the core.

@@ -2,7 +2,7 @@
 name: Markdown Guide
 description: Create or update Markdown documents with an abstract, anchors and navigation, reverse-chronological change history, semantic lists (DP/DA/DF), and extensible rules via presets, templates, and custom rules. Use when writing, reviewing, or updating a .md file.
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # Markdown Guide
@@ -121,7 +121,7 @@ P1 — Identify document type, audience, template or directory, parent, and lang
 
 P2 — Read the selected template and local rules. Use `templates/` only after the user chooses or confirms a built-in template.
 
-P3 — Select active presets and custom rules.
+P3 — Select the narrowest active preset and the active custom rules.
 
 P4 — Define the outline with anchors and semantic prefixes.
 

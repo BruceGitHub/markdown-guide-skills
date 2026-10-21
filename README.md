@@ -2,6 +2,10 @@
 
 Reusable OpenCode skill for creating and maintaining Markdown documents with a consistent structure: a short abstract, explicit anchors and navigation, reverse-chronological change history, semantic IDs, and project decision tracking.
 
+## Motivation
+
+Markdown is portable as a file format, but not as a document convention. Teams, repositories, and tools use different structures for metadata, navigation, decisions, and history. This skill defines a known and defined schema for those conventions. With that schema, a Markdown document can be validated, parsed, and moved from one place to another without losing context, links, or traceability.
+
 ## Contents
 
 | Path | Purpose |
@@ -48,8 +52,22 @@ Inside `## Open decisions`, DAs and DFs are separated by `---` and the `### To d
 
 Built-in presets:
 
-- `project` — project plans, specifications, architecture notes, and decision logs.
-- `meeting-notes` — decisions and actions from a meeting.
+| Preset | Use |
+| --- | --- |
+| `project` | Project plans, specifications, architecture notes, and decision logs. |
+| `meeting-notes` | Decisions and actions from a meeting. |
+| `adr` | One architecture decision with consequences and alternatives. |
+| `rfc` | Design proposal with requirements, open questions, and decisions. |
+| `prd` | Product problem, goals, requirements, and metrics. |
+| `api-spec` | API contract with endpoints, schemas, errors, and examples. |
+| `post-mortem` | Incident review with timeline, causes, and actions. |
+| `runbook` | Operational procedure with verification, rollback, and escalation. |
+| `migration-plan` | Migration or cutover with validation, rollback, and communication. |
+| `release-notes` | Release highlights, breaking changes, features, fixes, and upgrades. |
+| `threat-model` | Assets, trust boundaries, threats, mitigations, and residual risks. |
+| `checklist` | Repeatable checks with owners, expected results, and exceptions. |
+
+Choose the narrowest preset. A specific preset such as `adr` takes precedence over `project` for the same document.
 
 To add a preset, create `presets/<id>.md` with the documented frontmatter, add a row to `presets/index.md`, and update `CHANGELOG.md`.
 
@@ -62,7 +80,7 @@ Precedence on conflict: mandatory core, explicit user instruction, template, cus
 
 ## Templates and examples
 
-Use `templates/document.md` for a generic document and `templates/project.md` for a project document. Use `examples/example-document.md` and `examples/example-project.md` as complete, reusable references.
+Use `templates/document.md` for a generic document and `templates/project.md` for a project document. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. Use `examples/example-document.md` and `examples/example-project.md` as complete, reusable references.
 
 Before creating a document, the skill determines the template. If it cannot infer one from the request, the target directory, or an existing file, it asks the user which template to use instead of choosing silently.
 
@@ -94,4 +112,4 @@ Alternatively, add the parent directory to the `skills` array in `opencode.json`
 
 ## Version
 
-Current version: 1.2.0. See `CHANGELOG.md`.
+Current version: 1.3.0. See `CHANGELOG.md`.
