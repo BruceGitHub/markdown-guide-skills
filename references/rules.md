@@ -255,19 +255,20 @@ Example:
 
 ## Templates and directories
 
-If the user specifies a template or directory:
+Before creating a document or a template:
 
-- **TP1 — Read the template, the `README.md`, any guidelines (`AGENTS.md`, `CONTRIBUTING.md`, `STYLE.md`), and a representative existing document.**
-- **TP2 — Apply the local file name, location, frontmatter, language, and style.**
-- **TP3 — Keep template sections that are compatible with the core rules.**
-- **TP4 — Add missing mandatory sections in the correct position.**
-- **TP5 — Fill every placeholder. Do not leave `{{...}}`, `TODO`, or example text.**
-- **TP6 — Record `Template` in the metadata and every conflict in `## Constraints`.**
-- **TP7 — If the directory has an index, add the new document link.**
+- **TP1 — Determine the template. If it cannot be inferred from the request, the target directory, or an existing file, ask the user which template to use. Offer the built-in templates (`templates/document.md`, `templates/project.md`) and any custom template paths. Ask explicitly, for example: "Which template should I use: generic, project, or a custom path?" Do not choose silently.**
+- **TP2 — If the user specifies a template or directory, read the template, the `README.md`, any guidelines (`AGENTS.md`, `CONTRIBUTING.md`, `STYLE.md`), and a representative existing document.**
+- **TP3 — Apply the local file name, location, frontmatter, language, and style.**
+- **TP4 — Keep template sections that are compatible with the core rules.**
+- **TP5 — Add missing mandatory sections in the correct position.**
+- **TP6 — Fill every placeholder. Do not leave `{{...}}`, `TODO`, or example text.**
+- **TP7 — Record `Template` in the metadata and every conflict in `## Constraints`.**
+- **TP8 — If the directory has an index, add the new document link.**
 
 Templates cannot remove the abstract, anchors, navigation, history, semantic lists, or constraints. On conflict, the core rule wins; the exception must be recorded.
 
-If the file name is not specified, use kebab-case derived from the title. If no template is specified, do not impose one: use `templates/` only when a skeleton is needed.
+If the file name is not specified, use kebab-case derived from the title. If no template is specified or inferable, ask the user before proceeding; do not impose one. Use `templates/` only after the user chooses or confirms a built-in template.
 
 ## Updates
 

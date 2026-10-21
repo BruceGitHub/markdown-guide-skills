@@ -2,6 +2,11 @@
 
 Changes to the skill, newest first.
 
+## 1.1.0 — 2026-10-22
+
+- Added `README.md` with usage, structure, installation, and maintenance notes.
+- Require asking the user which template to use when the template cannot be inferred.
+
 ## 1.0.0 — 2026-10-21
 
 - Initial version.

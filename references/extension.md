@@ -137,6 +137,8 @@ Templates in `templates/` are skeletons. A user-specified template takes precede
 
 Rules:
 
+- Before creating a document or a template, determine the template.
+- If the template cannot be inferred from the request, the target directory, or an existing file, ask the user which template to use. Offer the built-in templates (`templates/document.md`, `templates/project.md`) and any custom template paths. Do not choose silently.
 - The template may change the order and names of compatible sections.
 - Missing mandatory sections must be added.
 - Placeholders must be filled or removed.

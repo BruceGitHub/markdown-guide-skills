@@ -2,7 +2,7 @@
 name: Markdown Guide
 description: Create or update Markdown documents with an abstract, anchors and navigation, reverse-chronological change history, semantic lists (DP/DA/DF), and extensible rules via presets, templates, and custom rules. Use when writing, reviewing, or updating a .md file.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Markdown Guide
@@ -13,9 +13,9 @@ This skill defines how to create or update Markdown documents that are readable,
 
 ## Reading order
 
-P1 — If the user specifies a template, a directory, or an existing file, read it first. Apply local naming, location, frontmatter, and style.
+P1 — Identify the document type, audience, template or directory, parent, and language. If the template cannot be inferred from the request, the target directory, or an existing file, ask the user which template to use before writing.
 
-P2 — Read `references/rules.md` and `references/style.md`.
+P2 — Read the selected template and local rules. Also read `references/rules.md` and `references/style.md`. Use `templates/` only after the user chooses or confirms a built-in template.
 
 P3 — Read `presets/index.md` and load the relevant active presets. For a project, load `presets/project.md`.
 
@@ -43,7 +43,7 @@ G5 — **Metadata and version.** Table after the H1 with `Version`, `Date`, `Sta
 
 G6 — **Constraints.** `## Constraints` is always present. It contains exceptions, conflicts with templates, and active custom rules. If none, write `No constraints.`
 
-G7 — **Templates and directories.** If the user specifies a template or directory, read it and follow its rules, names, and location. Add missing mandatory sections. Core rules are never removed. Record every conflict in `## Constraints`. If no template is specified, do not impose one.
+G7 — **Templates and directories.** Before writing, determine the template. If the user specifies a template or directory, read it and follow its rules, names, and location. If the template cannot be inferred from the request, the target directory, or an existing file, ask the user which template to use before creating anything. Offer the built-in templates (`templates/document.md`, `templates/project.md`) and any custom template paths. Do not choose silently. Add missing mandatory sections. Core rules are never removed. Record every conflict in `## Constraints`.
 
 G8 — **Project document.** Use `presets/project.md`: `## Decisions made` and `## Open decisions`; DA and DF separated by `---`; DP/DA/DF IDs; references as links; checked-off (closed) items struck through; file history.
 
@@ -121,9 +121,9 @@ Replace `{{PARENT}}` with the parent document link or `#s-index` if the document
 
 ## Procedure
 
-P1 — Identify document type, audience, template or directory, parent, and language.
+P1 — Identify document type, audience, template or directory, parent, and language. If the template is not inferable, ask the user before writing.
 
-P2 — Read template and local rules. If missing, use `templates/`.
+P2 — Read the selected template and local rules. Use `templates/` only after the user chooses or confirms a built-in template.
 
 P3 — Select active presets and custom rules.
 
@@ -169,4 +169,4 @@ C10 — Change history in reverse-chronological order; version aligned.
 
 C11 — Project: DP/DA/DF, `---`, references as links, closed items struck through.
 
-C12 — Template applied; conflicts recorded; no placeholders or dead links.
+C12 — Template selected or explicitly confirmed by the user; conflicts recorded; no placeholders or dead links.

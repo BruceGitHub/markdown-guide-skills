@@ -1,0 +1,96 @@
+# Markdown Guide
+
+Reusable OpenCode skill for creating and maintaining Markdown documents with a consistent structure: a short abstract, explicit anchors and navigation, reverse-chronological change history, semantic IDs, and project decision tracking.
+
+## Contents
+
+| Path | Purpose |
+| --- | --- |
+| `SKILL.md` | Entry point and mandatory rules |
+| `references/rules.md` | Detailed rules for structure, anchors, lists, history, and constraints |
+| `references/style.md` | Minimal, precise writing style |
+| `references/extension.md` | Presets, custom rules, templates, and precedence |
+| `presets/index.md` | Preset registry |
+| `presets/project.md` | Project document preset |
+| `presets/meeting-notes.md` | Meeting notes preset |
+| `custom/rules.md` | User rules, disabled by default |
+| `custom/presets/example.md` | Custom preset example |
+| `templates/document.md` | Generic document template |
+| `templates/project.md` | Project document template |
+| `examples/README.md` | Example index |
+| `examples/example-document.md` | Generic document example |
+| `examples/example-project.md` | Project document example |
+| `CHANGELOG.md` | Skill version history |
+
+## Core rules
+
+- Every document opens with a short abstract of at most 30 words.
+- Every H2 has an explicit `s-<slug>` anchor.
+- Every section links back to the top and to the parent or index.
+- Change history is reverse-chronological and versioned with semver.
+- Citable items use semantic IDs such as `DP1`, `DA1`, `DF1`, `RF1`, and `V1`.
+- Automatic numbered lists and checkboxes are forbidden.
+- Exceptions are recorded in `## Constraints` with date, requester, and scope.
+- `## Constraints` is always present, even when empty.
+- Closed items are struck through and kept in the document.
+
+## Project documents
+
+Project documents add two mandatory sections:
+
+- `## Decisions made` with `DP#` items.
+- `## Open decisions` with `DA#` items.
+
+Inside `## Open decisions`, DAs and DFs are separated by `---` and the `### To do` subsection. Each decision can reference files or sections with Markdown links. Closed DAs and DFs are struck through with `~~...~~` and link to the decision that closed them.
+
+## Presets and customization
+
+Built-in presets:
+
+- `project` — project plans, specifications, architecture notes, and decision logs.
+- `meeting-notes` — decisions and actions from a meeting.
+
+To add a preset, create `presets/<id>.md` with the documented frontmatter, add a row to `presets/index.md`, and update `CHANGELOG.md`.
+
+User customizations:
+
+- `custom/rules.md` for user rules.
+- `custom/presets/<id>.md` for user presets.
+
+Precedence on conflict: mandatory core, explicit user instruction, template, custom rules, presets, skill defaults. Every deviation from the core is recorded in the generated document.
+
+## Templates and examples
+
+Use `templates/document.md` for a generic document and `templates/project.md` for a project document. Use `examples/example-document.md` and `examples/example-project.md` as complete, reusable references.
+
+Before creating a document, the skill determines the template. If it cannot infer one from the request, the target directory, or an existing file, it asks the user which template to use instead of choosing silently.
+
+## Install
+
+Copy the skill files into an OpenCode skill source, excluding Git metadata:
+
+```bash
+mkdir -p ~/.config/opencode/skills/markdown-guide
+rsync -a --exclude '.git' --exclude 'markdown-guide-skills' ./ ~/.config/opencode/skills/markdown-guide/
+```
+
+Alternatively, add the parent directory to the `skills` array in `opencode.json`:
+
+```jsonc
+{
+  "skills": ["./skills"]
+}
+```
+
+## Repository notes
+
+- The skill is written in English.
+- `SKILL.md` is the agent entry point; `references/` contains the detailed rules.
+- Service files (`SKILL.md`, `CHANGELOG.md`, `references/`, `presets/`, `custom/`, `templates/`) are exempt from the document rules.
+- `examples/` contains complete documents that follow the rules.
+- `markdown-guide-skills/` is a legacy nested repository and is ignored by `.gitignore`.
+- Commit and push are performed by the repository owner because the OpenCode configuration denies `git commit` and `git push` to the agent.
+
+## Version
+
+Current version: 1.1.0. See `CHANGELOG.md`.
