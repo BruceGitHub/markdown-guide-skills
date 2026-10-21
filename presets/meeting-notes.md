@@ -95,7 +95,6 @@ Record decisions and actions from a meeting. Meeting notes are not a transcript.
 ## Open decisions
 
 - <a id="da1"></a>**DA1 — {{Title}}.** {{Text}}.
-  - Status: open
   - Owner: {{OWNER}}
   - Due date: {{YYYY-MM-DD}}
 

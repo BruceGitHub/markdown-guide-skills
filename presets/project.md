@@ -75,7 +75,6 @@ A document that makes decisions and tracks work: project, plan, specification, a
 ## Open decisions
 
 - <a id="da1"></a>**DA1 — {{Title}}.** {{Text}}.
-  - Status: open
   - Owner: {{OWNER}}
   - Due date: {{YYYY-MM-DD}}
   - Ref.: [{{RF}}](#rf1)
@@ -124,7 +123,7 @@ PR1 — Keep the structure order. Project-specific sections go between `## Conte
 
 PR2 — `## Decisions made` contains only DP. Every DP has a title, text, date, and references when present.
 
-PR3 — `## Open decisions` contains DAs. Every DA has `Status`, `Owner`, `Due date`, and `Ref.` when present.
+PR3 — `## Open decisions` contains DAs. Every DA has `Owner`, `Due date`, and `Ref.` when present. Do not add `Status: open`; the section already defines the state. If a DA is blocked, state the blocker in the text or add `Blocked by:`.
 
 PR4 — Inside `## Open decisions`, separate DAs from DFs with a `---` line followed by `### To do`.
 
@@ -164,7 +163,6 @@ Open decision:
 
 ```markdown
 - <a id="da1"></a>**DA1 — Service token management.**
-  - Status: open
   - Owner: Security Team
   - Due date: 2026-11-15
   - Ref.: [RF4](#rf4)

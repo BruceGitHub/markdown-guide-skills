@@ -65,7 +65,6 @@ The service controls access to three internal applications. Today each applicati
 ## Open decisions
 
 - <a id="da1"></a>**DA1 — Service token management.**
-  - Status: open
   - Owner: Security Team
   - Due date: 2026-11-15
   - Ref.: [RF4](#rf4)

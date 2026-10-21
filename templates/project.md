@@ -60,7 +60,6 @@
 ## Open decisions
 
 - <a id="da1"></a>**DA1 — {{Title}}.** {{Text}}.
-  - Status: open
   - Owner: {{OWNER}}
   - Due date: {{YYYY-MM-DD}}
   - Ref.: [RF1](#rf1)

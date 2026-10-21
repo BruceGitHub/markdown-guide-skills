@@ -7,6 +7,7 @@ Changes to the skill, newest first.
 - Added `README.md` with usage, structure, installation, and maintenance notes.
 - Require asking the user which template to use when the template cannot be inferred.
 - Use a compact two-row metadata table as the document header.
+- Do not repeat `Status: open` in `## Open decisions`; the section already defines the state.
 
 ## 1.0.0 — 2026-10-21
 
