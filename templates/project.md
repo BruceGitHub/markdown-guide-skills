@@ -4,14 +4,9 @@
 
 # {{TITLE}}
 
-| Field | Value |
-| --- | --- |
-| Version | 0.1.0 |
-| Date | {{YYYY-MM-DD}} |
-| Status | draft |
-| Owner | {{OWNER}} |
-| Template | templates/project.md |
-| Parent | {{LINK_PARENT}} |
+| Version | Date | Status | Owner | Template | Parent |
+| --- | --- | --- | --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | templates/project.md | {{LINK_PARENT}} |
 
 <a id="s-abstract"></a>
 ## Abstract

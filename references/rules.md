@@ -4,7 +4,13 @@ Mandatory rules for every document produced or updated with the skill. A documen
 
 ## Metadata
 
-The metadata table follows the H1.
+The metadata is a compact two-row table placed after the H1. Required columns are `Version`, `Date`, and `Status`. Add `Owner`, `Template`, and `Parent` only when they have a value. Do not use a vertical `Field | Value` table.
+
+| Version | Date | Status | Owner |
+| --- | --- | --- | --- |
+| 1.2.0 | 2026-10-21 | active | Platform Team |
+
+Field reference:
 
 | Field | Required | Value |
 | --- | --- | --- |
@@ -289,6 +295,7 @@ Before modifying an existing document:
 
 A document is ready only if every answer is yes:
 
+- Metadata is a compact two-row table with the required columns.
 - The abstract is present and does not exceed 30 words.
 - `<a id="top"></a>` is the first line.
 - Every H2 has the `s-<slug>` anchor.

@@ -19,14 +19,9 @@ A document that makes decisions and tracks work: project, plan, specification, a
 
 # {{TITLE}}
 
-| Field | Value |
-| --- | --- |
-| Version | 0.1.0 |
-| Date | {{YYYY-MM-DD}} |
-| Status | draft |
-| Owner | {{OWNER}} |
-| Template | presets/project.md |
-| Parent | {{LINK_PARENT}} |
+| Version | Date | Status | Owner | Template | Parent |
+| --- | --- | --- | --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/project.md | {{LINK_PARENT}} |
 
 <a id="s-abstract"></a>
 ## Abstract

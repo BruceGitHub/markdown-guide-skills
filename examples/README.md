@@ -2,13 +2,9 @@
 
 # Examples
 
-| Field | Value |
-| --- | --- |
-| Version | 1.0.0 |
-| Date | 2026-10-21 |
-| Status | active |
-| Owner | Markdown Guide |
-| Parent | — |
+| Version | Date | Status | Owner |
+| --- | --- | --- | --- |
+| 1.0.0 | 2026-10-21 | active | Markdown Guide |
 
 <a id="s-abstract"></a>
 ## Abstract

@@ -2,13 +2,9 @@
 
 # Technical documentation guidelines
 
-| Field | Value |
-| --- | --- |
-| Version | 1.1.0 |
-| Date | 2026-10-21 |
-| Status | active |
-| Owner | Documentation |
-| Parent | [Examples](./README.md#s-index) |
+| Version | Date | Status | Owner | Parent |
+| --- | --- | --- | --- | --- |
+| 1.1.0 | 2026-10-21 | active | Documentation | [Examples](./README.md#s-index) |
 
 <a id="s-abstract"></a>
 ## Abstract

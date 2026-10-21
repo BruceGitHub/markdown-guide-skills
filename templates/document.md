@@ -4,13 +4,9 @@
 
 # {{TITLE}}
 
-| Field | Value |
-| --- | --- |
-| Version | 0.1.0 |
-| Date | {{YYYY-MM-DD}} |
-| Status | draft |
-| Owner | {{OWNER}} |
-| Parent | {{LINK_PARENT}} |
+| Version | Date | Status | Owner | Parent |
+| --- | --- | --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | {{LINK_PARENT}} |
 
 <a id="s-abstract"></a>
 ## Abstract

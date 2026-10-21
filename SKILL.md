@@ -2,7 +2,7 @@
 name: Markdown Guide
 description: Create or update Markdown documents with an abstract, anchors and navigation, reverse-chronological change history, semantic lists (DP/DA/DF), and extensible rules via presets, templates, and custom rules. Use when writing, reviewing, or updating a .md file.
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Markdown Guide
@@ -39,7 +39,7 @@ G3 — **Change history.** `## Change history` is the last section. Table `Versi
 
 G4 — **Semantic lists.** Automatic numbered lists (`1.`, `2.`) and unlabeled bullets for citable items are forbidden. Format: `- **DP1 — Title.** Text.` IDs are stable, never reused or renumbered. Every prefix used appears in `## Legend`. Exception only on explicit request, recorded in `## Constraints` with date, requester, and scope.
 
-G5 — **Metadata and version.** Table after the H1 with `Version`, `Date`, `Status`. Optional: `Owner`, `Template`, `Parent`. Semantic versioning: major for restructuring or meaning change, minor for new sections or content, patch for corrections.
+G5 — **Metadata and version.** Compact two-row table after the H1. Required columns: `Version`, `Date`, `Status`. Optional columns: `Owner`, `Template`, `Parent`, added only when they have a value. Semantic versioning: major for restructuring or meaning change, minor for new sections or content, patch for corrections.
 
 G6 — **Constraints.** `## Constraints` is always present. It contains exceptions, conflicts with templates, and active custom rules. If none, write `No constraints.`
 
@@ -58,13 +58,9 @@ G10 — **Updates.** Never delete history, IDs, or anchors. Add a history row, b
 
 # Title
 
-| Field | Value |
-| --- | --- |
-| Version | 0.1.0 |
-| Date | 2026-10-21 |
-| Status | draft |
-| Owner | ... |
-| Parent | ... |
+| Version | Date | Status | Owner | Parent |
+| --- | --- | --- | --- | --- |
+| 0.1.0 | 2026-10-21 | draft | ... | ... |
 
 <a id="s-abstract"></a>
 ## Abstract

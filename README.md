@@ -24,6 +24,7 @@ Reusable OpenCode skill for creating and maintaining Markdown documents with a c
 
 ## Core rules
 
+- Metadata is a compact two-row table.
 - Every document opens with a short abstract of at most 30 words.
 - Every H2 has an explicit `s-<slug>` anchor.
 - Every section links back to the top and to the parent or index.
@@ -93,4 +94,4 @@ Alternatively, add the parent directory to the `skills` array in `opencode.json`
 
 ## Version
 
-Current version: 1.1.0. See `CHANGELOG.md`.
+Current version: 1.2.0. See `CHANGELOG.md`.

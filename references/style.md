@@ -46,6 +46,7 @@ Writing rules for documents produced with the skill.
 
 ## Structure
 
+- Metadata as a compact two-row table.
 - Abstract first.
 - Index after the abstract.
 - Content from general to specific.

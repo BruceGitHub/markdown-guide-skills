@@ -19,14 +19,9 @@ Record decisions and actions from a meeting. Meeting notes are not a transcript.
 
 # Meeting notes — {{TITLE}}
 
-| Field | Value |
-| --- | --- |
-| Version | 0.1.0 |
-| Date | {{YYYY-MM-DD}} |
-| Status | draft |
-| Owner | {{NOTE_TAKER}} |
-| Template | presets/meeting-notes.md |
-| Parent | {{LINK_PARENT}} |
+| Version | Date | Status | Owner | Template | Parent |
+| --- | --- | --- | --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft | {{NOTE_TAKER}} | presets/meeting-notes.md | {{LINK_PARENT}} |
 
 <a id="s-abstract"></a>
 ## Abstract
