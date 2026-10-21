@@ -1,6 +1,6 @@
 # Markdown Guide
 
-Reusable OpenCode skill for creating and maintaining Markdown documents with a consistent structure: a short abstract, explicit anchors and navigation, reverse-chronological change history, semantic IDs, and project decision tracking.
+Reusable OpenCode skill for creating and maintaining Markdown documents with a consistent structure: a short abstract, explicit anchors and navigation, reverse-chronological change history, semantic IDs, and extensible presets.
 
 ## Motivation
 
@@ -15,15 +15,11 @@ Markdown is portable as a file format, but not as a document convention. Teams, 
 | `references/style.md` | Minimal, precise writing style |
 | `references/extension.md` | Presets, custom rules, templates, and precedence |
 | `presets/index.md` | Preset registry |
-| `presets/project.md` | Project document preset |
-| `presets/meeting-notes.md` | Meeting notes preset |
+| `presets/*.md` | Built-in document presets |
 | `custom/rules.md` | User rules, disabled by default |
-| `custom/presets/example.md` | Custom preset example |
-| `templates/document.md` | Generic document template |
-| `templates/project.md` | Project document template |
-| `examples/README.md` | Example index |
-| `examples/example-document.md` | Generic document example |
-| `examples/example-project.md` | Project document example |
+| `custom/presets/` | User preset examples |
+| `templates/` | Generic and project skeletons |
+| `examples/` | Complete example documents |
 | `CHANGELOG.md` | Skill version history |
 
 ## Core rules
@@ -33,20 +29,11 @@ Markdown is portable as a file format, but not as a document convention. Teams, 
 - Every H2 has an explicit `s-<slug>` anchor.
 - Every section links back to the top and to the parent or index.
 - Change history is reverse-chronological and versioned with semver.
-- Citable items use semantic IDs such as `DP1`, `DA1`, `DF1`, `RF1`, and `V1`.
+- Citable items use semantic IDs defined by the selected preset.
 - Automatic numbered lists and checkboxes are forbidden.
 - Exceptions are recorded in `## Constraints` with date, requester, and scope.
 - `## Constraints` is always present, even when empty.
 - Closed items are struck through and kept in the document.
-
-## Project documents
-
-Project documents add two mandatory sections:
-
-- `## Decisions made` with `DP#` items.
-- `## Open decisions` with `DA#` items.
-
-Inside `## Open decisions`, DAs and DFs are separated by `---` and the `### To do` subsection. Each decision can reference files or sections with Markdown links. Closed DAs and DFs are struck through with `~~...~~` and link to the decision that closed them.
 
 ## Presets and customization
 
@@ -83,7 +70,7 @@ Precedence on conflict: mandatory core, explicit user instruction, template, cus
 
 ## Templates and examples
 
-Use `templates/document.md` for a generic document and `templates/project.md` for a project document. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. Use `examples/example-document.md` and `examples/example-project.md` as complete, reusable references.
+Use `templates/document.md` as the generic skeleton. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `examples/` contains complete, reusable references.
 
 Before creating a document, the skill determines the template. If it cannot infer one from the request, the target directory, or an existing file, it asks the user which template to use instead of choosing silently.
 

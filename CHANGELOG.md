@@ -7,7 +7,8 @@ Changes to the skill, newest first.
 - Added `changelog` preset following Keep a Changelog and Semantic Versioning.
 - Added `bug-report` preset.
 - Added `incident` preset.
-- Updated the preset registry, extension guide, and README.
+- Updated the preset registry and extension guide.
+- Removed project-specific details from the README; `project` is one preset among many.
 
 ## 1.3.0 — 2026-10-22
 
