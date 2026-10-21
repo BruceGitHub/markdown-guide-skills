@@ -2,7 +2,7 @@
 id: release-notes
 version: "1.0.0"
 status: active
-applies-to: [release, release notes, changelog]
+applies-to: [release, release notes]
 requires: []
 ---
 

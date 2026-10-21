@@ -2,7 +2,7 @@
 id: post-mortem
 version: "1.0.0"
 status: active
-applies-to: [post-mortem, incident, outage, incident review]
+applies-to: [post-mortem, incident review, outage review]
 requires: []
 ---
 

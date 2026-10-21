@@ -164,10 +164,13 @@ Included presets:
 - `rfc` — design proposal with open questions and decisions.
 - `prd` — product requirements with goals, requirements, and metrics.
 - `api-spec` — API contract with endpoints, schemas, errors, and examples.
+- `bug-report` — reproducible defect with environment, triage, and evidence.
 - `post-mortem` — incident review with timeline, causes, and actions.
+- `incident` — active or recent incident with severity, timeline, mitigation, and communication.
 - `runbook` — operational procedure with verification, rollback, and escalation.
 - `migration-plan` — migration or cutover with validation, rollback, and communication.
 - `release-notes` — release highlights, breaking changes, features, fixes, and upgrades.
+- `changelog` — ongoing versioned log following Keep a Changelog and SemVer.
 - `threat-model` — assets, trust boundaries, threats, mitigations, and residual risks.
 - `checklist` — repeatable checks with owners, expected results, and exceptions.
 

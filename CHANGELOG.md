@@ -2,6 +2,13 @@
 
 Changes to the skill, newest first.
 
+## 1.4.0 — 2026-10-22
+
+- Added `changelog` preset following Keep a Changelog and Semantic Versioning.
+- Added `bug-report` preset.
+- Added `incident` preset.
+- Updated the preset registry, extension guide, and README.
+
 ## 1.3.0 — 2026-10-22
 
 - Added presets: `adr`, `rfc`, `prd`, `api-spec`, `post-mortem`, `runbook`, `migration-plan`, `release-notes`, `threat-model`, `checklist`.

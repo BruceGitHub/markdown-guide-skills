@@ -60,10 +60,13 @@ Built-in presets:
 | `rfc` | Design proposal with requirements, open questions, and decisions. |
 | `prd` | Product problem, goals, requirements, and metrics. |
 | `api-spec` | API contract with endpoints, schemas, errors, and examples. |
+| `bug-report` | Reproducible defect with environment, triage, and evidence. |
 | `post-mortem` | Incident review with timeline, causes, and actions. |
+| `incident` | Active or recent incident with severity, timeline, mitigation, and communication. |
 | `runbook` | Operational procedure with verification, rollback, and escalation. |
 | `migration-plan` | Migration or cutover with validation, rollback, and communication. |
 | `release-notes` | Release highlights, breaking changes, features, fixes, and upgrades. |
+| `changelog` | Ongoing versioned log following Keep a Changelog and SemVer. |
 | `threat-model` | Assets, trust boundaries, threats, mitigations, and residual risks. |
 | `checklist` | Repeatable checks with owners, expected results, and exceptions. |
 
@@ -112,4 +115,4 @@ Alternatively, add the parent directory to the `skills` array in `opencode.json`
 
 ## Version
 
-Current version: 1.3.0. See `CHANGELOG.md`.
+Current version: 1.4.0. See `CHANGELOG.md`.
