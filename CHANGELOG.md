@@ -2,6 +2,13 @@
 
 Changes to the skill, newest first.
 
+## 1.7.0
+
+### Minor Changes
+
+- 1269daa: Add the `/presets` command and a preset list/search script.
+- 1269daa: Move the skill into `skills/markdown-guide`, add tests for the scripts, add the update command, and document lightweight packaging.
+
 ## 1.6.0
 
 ### Minor Changes
