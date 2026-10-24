@@ -116,4 +116,4 @@ Commit the generated changeset files. Do not edit `CHANGELOG.md` or the version 
 
 ## Version
 
-Current version: 1.4.0. See `CHANGELOG.md`.
+Current version: 1.4.1. See `CHANGELOG.md`.

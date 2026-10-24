@@ -2,6 +2,12 @@
 
 Changes to the skill, newest first.
 
+## 1.4.1
+
+### Patch Changes
+
+- dade2fd: Add Changesets for versioning and changelog generation.
+
 ## 1.4.0 — 2026-10-22
 
 - Added `changelog` preset following Keep a Changelog and Semantic Versioning.
