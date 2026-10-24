@@ -9,6 +9,7 @@ Presets add rules for a document type. Core rules stay active. A preset cannot r
 | adr | [adr.md](./adr.md) | 1.0.0 | active | adr, architecture decision, decision record | — |
 | rfc | [rfc.md](./rfc.md) | 1.0.0 | active | rfc, proposal, design proposal | — |
 | prd | [prd.md](./prd.md) | 1.0.0 | active | prd, product requirements, requirements | — |
+| stitch-design | [stitch-design.md](./stitch-design.md) | 1.0.0 | active | design system, design.md, stitch, ui design | — |
 | api-spec | [api-spec.md](./api-spec.md) | 1.0.0 | active | api, api spec, endpoint, contract | — |
 | bug-report | [bug-report.md](./bug-report.md) | 1.0.0 | active | bug, bug report, defect | — |
 | post-mortem | [post-mortem.md](./post-mortem.md) | 1.0.0 | active | post-mortem, incident review, outage review | — |

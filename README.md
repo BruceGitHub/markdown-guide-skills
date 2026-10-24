@@ -48,6 +48,7 @@ Built-in presets:
 | `adr` | One architecture decision with consequences and alternatives. |
 | `rfc` | Design proposal with requirements, open questions, and decisions. |
 | `prd` | Product problem, goals, requirements, and metrics. |
+| `stitch-design` | Google Stitch DESIGN.md design system with YAML tokens and design rationale. |
 | `api-spec` | API contract with endpoints, schemas, errors, and examples. |
 | `bug-report` | Reproducible defect with environment, triage, and evidence. |
 | `post-mortem` | Incident review with timeline, causes, and actions. |

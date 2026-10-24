@@ -163,6 +163,7 @@ Included presets:
 - `adr` — architecture decision record.
 - `rfc` — design proposal with open questions and decisions.
 - `prd` — product requirements with goals, requirements, and metrics.
+- `stitch-design` — Google Stitch DESIGN.md design system with YAML tokens and design rationale.
 - `api-spec` — API contract with endpoints, schemas, errors, and examples.
 - `bug-report` — reproducible defect with environment, triage, and evidence.
 - `post-mortem` — incident review with timeline, causes, and actions.
