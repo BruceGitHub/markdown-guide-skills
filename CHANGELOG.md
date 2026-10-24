@@ -2,6 +2,12 @@
 
 Changes to the skill, newest first.
 
+## 1.6.0
+
+### Minor Changes
+
+- 3f778d9: Add Google Stitch DESIGN.md preset for UI design systems.
+
 ## 1.5.0
 
 ### Minor Changes
