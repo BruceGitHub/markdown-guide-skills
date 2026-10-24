@@ -20,6 +20,8 @@ Markdown is portable as a file format, but not as a document convention. Teams, 
 | `custom/presets/` | User preset examples |
 | `templates/` | Generic and project skeletons |
 | `examples/` | Complete example documents |
+| `.changeset/` | Changesets configuration and pending changesets |
+| `scripts/sync-skill-version.mjs` | Syncs the package version to `SKILL.md` and `README.md` |
 | `CHANGELOG.md` | Skill version history |
 
 ## Core rules
@@ -90,6 +92,18 @@ Alternatively, add the parent directory to the `skills` array in `opencode.json`
   "skills": ["./skills"]
 }
 ```
+
+## Versioning
+
+This repository uses [Changesets](https://github.com/changesets/changesets).
+
+Run `npm install` once, then:
+
+- `npm run changeset` — create a changeset for a user-visible change.
+- `npm run version` — apply version bumps, update `CHANGELOG.md`, and sync the version in `SKILL.md` and `README.md`.
+- `npm run release` — create release tags from the current versions.
+
+Commit the generated changeset files. Do not edit `CHANGELOG.md` or the version fields by hand.
 
 ## Repository notes
 

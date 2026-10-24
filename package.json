@@ -1,0 +1,14 @@
+{
+  "name": "markdown-guide-skills",
+  "version": "1.4.0",
+  "private": true,
+  "description": "Schema-driven OpenCode skill for portable Markdown documents.",
+  "scripts": {
+    "changeset": "changeset",
+    "version": "changeset version && node scripts/sync-skill-version.mjs",
+    "release": "changeset git-tag"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3"
+  }
+}
