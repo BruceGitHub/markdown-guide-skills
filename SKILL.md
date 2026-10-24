@@ -2,14 +2,16 @@
 name: Markdown Guide
 description: Create or update Markdown documents with an abstract, anchors and navigation, reverse-chronological change history, semantic lists (DP/DA/DF), and extensible rules via presets, templates, and custom rules. Use when writing, reviewing, or updating a .md file.
 metadata:
-  version: "1.4.1"
+  version: "1.5.0"
+  opencode/autoinvoke: false
+disable-model-invocation: true
 ---
 
 # Markdown Guide
 
 ## Scope
 
-This skill defines how to create or update Markdown documents that are readable, traceable, and linked. The rules apply to documents produced or modified. The skill's service files (`SKILL.md`, `CHANGELOG.md`, `references/`, `presets/`, `custom/`, `templates/`) are excluded.
+This skill defines how to create or update Markdown documents that are readable, traceable, and linked. The rules apply to documents produced or modified. The skill's service files (`SKILL.md`, `README.md`, `CHANGELOG.md`, `package.json`, `package-lock.json`, `.changeset/`, `scripts/`, `references/`, `presets/`, `custom/`, `templates/`) are excluded.
 
 ## Reading order
 

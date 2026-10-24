@@ -93,6 +93,58 @@ Alternatively, add the parent directory to the `skills` array in `opencode.json`
 }
 ```
 
+### Install with a skills CLI
+
+Install directly from GitHub:
+
+```bash
+npx skills add BruceGitHub/markdown-guide-skills
+```
+
+List the discovered skill without installing:
+
+```bash
+npx skills add BruceGitHub/markdown-guide-skills --list
+```
+
+Install for a specific agent:
+
+```bash
+npx skills add BruceGitHub/markdown-guide-skills -a opencode
+```
+
+Add `-g` for a user-level installation. The CLI installs the skill as `markdown-guide`.
+
+If your GitHub CLI includes the skills command:
+
+```bash
+gh skill install BruceGitHub/markdown-guide-skills SKILL.md
+```
+
+### Manual activation
+
+This skill is manual-only: it is installed but not advertised for automatic selection.
+
+- OpenCode: mention `@markdown-guide` or pick it from `/skills`.
+- Claude Code and Cursor: invoke `/markdown-guide`.
+- Codex: invoke `$markdown-guide`; automatic invocation is controlled by `policy.allow_implicit_invocation: false` in `agents/openai.yaml`.
+
+The behavior is set by `metadata.opencode/autoinvoke: false` and `disable-model-invocation: true` in `SKILL.md`.
+
+### Agent compatibility
+
+The repository follows the Agent Skills layout: a folder with `SKILL.md` plus supporting files.
+
+| Agent | Support | Notes |
+| --- | --- | --- |
+| OpenCode | Native | Discovers `SKILL.md`; manual activation via `metadata.opencode/autoinvoke: false`. |
+| Claude Code | Supported | Reads `SKILL.md` and honors `disable-model-invocation`. |
+| Cursor | Supported | Reads `SKILL.md` and honors `disable-model-invocation`. |
+| Codex | Partial | Reads `SKILL.md`; manual-only needs `agents/openai.yaml` policy. |
+| Other Agent Skills hosts | Check | Verify `SKILL.md` discovery and supporting-file access. |
+
+To see which agents the CLI detects, run `npx skills add BruceGitHub/markdown-guide-skills` without `-a`; it prompts with the detected agents. Check the agent documentation for `SKILL.md` support before relying on automatic or manual invocation.
+
 ## Versioning
 
 This repository uses [Changesets](https://github.com/changesets/changesets).
@@ -100,7 +152,7 @@ This repository uses [Changesets](https://github.com/changesets/changesets).
 Run `npm install` once, then:
 
 - `npm run changeset` — create a changeset for a user-visible change.
-- `npm run version` — apply version bumps, update `CHANGELOG.md`, and sync the version in `SKILL.md` and `README.md`.
+- `npm run version` — apply version bumps, update `CHANGELOG.md`, and sync the version in `SKILL.md`, `README.md`, and `package-lock.json`.
 - `npm run release` — create release tags from the current versions.
 
 Commit the generated changeset files. Do not edit `CHANGELOG.md` or the version fields by hand.
@@ -109,11 +161,11 @@ Commit the generated changeset files. Do not edit `CHANGELOG.md` or the version 
 
 - The skill is written in English.
 - `SKILL.md` is the agent entry point; `references/` contains the detailed rules.
-- Service files (`SKILL.md`, `CHANGELOG.md`, `references/`, `presets/`, `custom/`, `templates/`) are exempt from the document rules.
+- Service files (`SKILL.md`, `README.md`, `CHANGELOG.md`, `package.json`, `package-lock.json`, `.changeset/`, `scripts/`, `references/`, `presets/`, `custom/`, `templates/`) are exempt from the document rules.
 - `examples/` contains complete documents that follow the rules.
 - `markdown-guide-skills/` is a legacy nested repository and is ignored by `.gitignore`.
 - Commit and push are performed by the repository owner because the OpenCode configuration denies `git commit` and `git push` to the agent.
 
 ## Version
 
-Current version: 1.4.1. See `CHANGELOG.md`.
+Current version: 1.5.0. See `CHANGELOG.md`.

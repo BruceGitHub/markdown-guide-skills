@@ -2,6 +2,12 @@
 
 Changes to the skill, newest first.
 
+## 1.5.0
+
+### Minor Changes
+
+- Add skills CLI installation docs, agent compatibility notes, and manual-only activation. Keep `package-lock.json` in sync during versioning.
+
 ## 1.4.1
 
 ### Patch Changes
