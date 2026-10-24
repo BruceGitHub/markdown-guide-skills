@@ -11,7 +11,7 @@ disable-model-invocation: true
 
 ## Scope
 
-This skill defines how to create or update Markdown documents that are readable, traceable, and linked. The rules apply to documents produced or modified. The skill's service files (`SKILL.md`, `README.md`, `CHANGELOG.md`, `package.json`, `package-lock.json`, `.changeset/`, `scripts/`, `references/`, `presets/`, `custom/`, `templates/`) are excluded.
+This skill defines how to create or update Markdown documents that are readable, traceable, and linked. The rules apply to documents produced or modified. The skill's service files (`SKILL.md`, `references/`, `presets/`, `custom/`, `templates/`, `examples/`, `scripts/`) are excluded.
 
 ## Reading order
 
@@ -138,6 +138,14 @@ P8 — Deliver the file. Report presets, templates, and exceptions applied.
 ## Project
 
 For a project document read `presets/project.md` and use `examples/example-project.md` as a reference. `## Decisions made` and `## Open decisions` are mandatory. Inside `## Open decisions`, DA and DF are separated by `---`. Closed items are struck through with `~~...~~` and remain in the document.
+
+## Presets
+
+To list or search the available presets, run `node scripts/list-presets.mjs [query]` from the skill directory.
+
+## Update
+
+Update an installed copy with `npx skills update "Markdown Guide" -y`. Use `-g` for a global installation or `-p` for a project installation.
 
 ## Extension
 

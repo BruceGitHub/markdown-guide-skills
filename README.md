@@ -10,18 +10,18 @@ Markdown is portable as a file format, but not as a document convention. Teams, 
 
 | Path | Purpose |
 | --- | --- |
-| `SKILL.md` | Entry point and mandatory rules |
-| `references/rules.md` | Detailed rules for structure, anchors, lists, history, and constraints |
-| `references/style.md` | Minimal, precise writing style |
-| `references/extension.md` | Presets, custom rules, templates, and precedence |
-| `presets/index.md` | Preset registry |
-| `presets/*.md` | Built-in document presets |
-| `custom/rules.md` | User rules, disabled by default |
-| `custom/presets/` | User preset examples |
-| `templates/` | Generic and project skeletons |
-| `examples/` | Complete example documents |
+| `skills/markdown-guide/SKILL.md` | Skill entry point and mandatory rules |
+| `skills/markdown-guide/references/` | Detailed rules, style, and extension guide |
+| `skills/markdown-guide/presets/` | Preset registry and built-in presets |
+| `skills/markdown-guide/custom/` | User rules and custom preset example |
+| `skills/markdown-guide/templates/` | Generic and project skeletons |
+| `skills/markdown-guide/examples/` | Complete example documents |
+| `skills/markdown-guide/scripts/list-presets.mjs` | Preset list and search script shipped with the skill |
 | `.changeset/` | Changesets configuration and pending changesets |
-| `scripts/sync-skill-version.mjs` | Syncs the package version to `SKILL.md` and `README.md` |
+| `.opencode/commands/presets.md` | `/presets` command to list and search presets |
+| `.opencode/commands/update-skill.md` | `/update-markdown-guide` command to update the installed skill |
+| `scripts/sync-skill-version.mjs` | Development script that syncs the package version |
+| `tests/` | Tests for the skill scripts |
 | `CHANGELOG.md` | Skill version history |
 
 ## Core rules
@@ -36,6 +36,25 @@ Markdown is portable as a file format, but not as a document convention. Teams, 
 - Exceptions are recorded in `## Constraints` with date, requester, and scope.
 - `## Constraints` is always present, even when empty.
 - Closed items are struck through and kept in the document.
+
+## Commands
+
+`/presets [query]` lists or searches the built-in presets.
+
+- `/presets` — list every preset.
+- `/presets adr` — find presets matching `adr`.
+- `/presets incident` — find presets matching `incident`.
+
+`/update-markdown-guide` updates an installed copy with `npx skills update "Markdown Guide" -y`.
+
+From a terminal:
+
+```bash
+npm run presets
+npm run presets -- ui
+```
+
+The commands work when this repository is the active OpenCode project. Installed copies include `scripts/list-presets.mjs` inside the skill directory for the same search.
 
 ## Presets and customization
 
@@ -62,28 +81,28 @@ Built-in presets:
 
 Choose the narrowest preset. A specific preset such as `adr` takes precedence over `project` for the same document.
 
-To add a preset, create `presets/<id>.md` with the documented frontmatter, add a row to `presets/index.md`, and update `CHANGELOG.md`.
+To add a preset, create `skills/markdown-guide/presets/<id>.md` with the documented frontmatter, add a row to `skills/markdown-guide/presets/index.md`, and add a changeset with `npm run changeset`.
 
 User customizations:
 
-- `custom/rules.md` for user rules.
-- `custom/presets/<id>.md` for user presets.
+- `skills/markdown-guide/custom/rules.md` for user rules.
+- `skills/markdown-guide/custom/presets/<id>.md` for user presets.
 
 Precedence on conflict: mandatory core, explicit user instruction, template, custom rules, presets, skill defaults. Every deviation from the core is recorded in the generated document.
 
 ## Templates and examples
 
-Use `templates/document.md` as the generic skeleton. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `examples/` contains complete, reusable references.
+Use `skills/markdown-guide/templates/document.md` as the generic skeleton. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `skills/markdown-guide/examples/` contains complete, reusable references.
 
 Before creating a document, the skill determines the template. If it cannot infer one from the request, the target directory, or an existing file, it asks the user which template to use instead of choosing silently.
 
 ## Install
 
-Copy the skill files into an OpenCode skill source, excluding Git metadata:
+Copy only the skill folder into an OpenCode skill source:
 
 ```bash
 mkdir -p ~/.config/opencode/skills/markdown-guide
-rsync -a --exclude '.git' --exclude 'markdown-guide-skills' ./ ~/.config/opencode/skills/markdown-guide/
+rsync -a skills/markdown-guide/ ~/.config/opencode/skills/markdown-guide/
 ```
 
 Alternatively, add the parent directory to the `skills` array in `opencode.json`:
@@ -119,8 +138,20 @@ Add `-g` for a user-level installation. The CLI installs the skill as `markdown-
 If your GitHub CLI includes the skills command:
 
 ```bash
-gh skill install BruceGitHub/markdown-guide-skills SKILL.md
+gh skill install BruceGitHub/markdown-guide-skills skills/markdown-guide/SKILL.md
 ```
+
+The CLI installs only `skills/markdown-guide/`. Tests, Changesets, and development scripts stay in the repository.
+
+### Update
+
+Update an installed copy:
+
+```bash
+npx skills update "Markdown Guide" -y
+```
+
+Use `-g` for a global installation or `-p` for a project installation.
 
 ### Manual activation
 
@@ -130,7 +161,7 @@ This skill is manual-only: it is installed but not advertised for automatic sele
 - Claude Code and Cursor: invoke `/markdown-guide`.
 - Codex: invoke `$markdown-guide`; automatic invocation is controlled by `policy.allow_implicit_invocation: false` in `agents/openai.yaml`.
 
-The behavior is set by `metadata.opencode/autoinvoke: false` and `disable-model-invocation: true` in `SKILL.md`.
+The behavior is set by `metadata.opencode/autoinvoke: false` and `disable-model-invocation: true` in `skills/markdown-guide/SKILL.md`.
 
 ### Agent compatibility
 
@@ -153,17 +184,21 @@ This repository uses [Changesets](https://github.com/changesets/changesets).
 Run `npm install` once, then:
 
 - `npm run changeset` — create a changeset for a user-visible change.
-- `npm run version` — apply version bumps, update `CHANGELOG.md`, and sync the version in `SKILL.md`, `README.md`, and `package-lock.json`.
+- `npm run version` — apply version bumps, update `CHANGELOG.md`, and sync the version in `skills/markdown-guide/SKILL.md`, `README.md`, and `package-lock.json`.
 - `npm run release` — create release tags from the current versions.
 
 Commit the generated changeset files. Do not edit `CHANGELOG.md` or the version fields by hand.
 
+## Lightweight by design
+
+Only `skills/markdown-guide/` is installed. Tests, Changesets, package metadata, and the version sync script stay at the repository root. This keeps the installed skill small and avoids downloading development tooling.
+
 ## Repository notes
 
 - The skill is written in English.
-- `SKILL.md` is the agent entry point; `references/` contains the detailed rules.
-- Service files (`SKILL.md`, `README.md`, `CHANGELOG.md`, `package.json`, `package-lock.json`, `.changeset/`, `scripts/`, `references/`, `presets/`, `custom/`, `templates/`) are exempt from the document rules.
-- `examples/` contains complete documents that follow the rules.
+- `skills/markdown-guide/SKILL.md` is the agent entry point; `skills/markdown-guide/references/` contains the detailed rules.
+- Service files (`skills/markdown-guide/SKILL.md`, `skills/markdown-guide/references/`, `skills/markdown-guide/presets/`, `skills/markdown-guide/custom/`, `skills/markdown-guide/templates/`, `skills/markdown-guide/scripts/`, `.changeset/`, `.opencode/commands/`, `scripts/`, `tests/`, `package.json`, `package-lock.json`, `README.md`, `CHANGELOG.md`) are exempt from the document rules.
+- `skills/markdown-guide/examples/` contains complete documents that follow the rules.
 - `markdown-guide-skills/` is a legacy nested repository and is ignored by `.gitignore`.
 - Commit and push are performed by the repository owner because the OpenCode configuration denies `git commit` and `git push` to the agent.
 

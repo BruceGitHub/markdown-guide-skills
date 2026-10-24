@@ -32,4 +32,4 @@ Presets add rules for a document type. Core rules stay active. A preset cannot r
 
 ## Adding a preset
 
-Read `references/extension.md`. Add a row to this table, bump the preset version, and update `CHANGELOG.md`.
+Read `references/extension.md`. Add a row to this table, bump the preset version, and add a changeset in the skill repository.

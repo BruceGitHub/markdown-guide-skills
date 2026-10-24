@@ -63,7 +63,7 @@ Rules:
 - **EP1 — Create `presets/<id>.md` with the frontmatter.**
 - **EP2 — Write rules with `PR#` IDs or with a preset prefix (`MR#` for meeting notes).**
 - **EP3 — Add the row to the table in `presets/index.md`.**
-- **EP4 — Bump the skill version in `CHANGELOG.md`.**
+- **EP4 — Add a changeset in the skill repository with `npm run changeset`.**
 - **EP5 — Verify with a test document: abstract, anchors, index, legend, constraints, history.**
 
 ### Disable a preset
@@ -149,9 +149,10 @@ Rules:
 
 - `metadata.version` in `SKILL.md` is the current version.
 - `CHANGELOG.md` lists changes newest first.
-- Bump major for an incompatible rule change.
-- Bump minor for a new preset, rule, or template.
-- Bump patch for corrections and clarifications.
+- Use Changesets in the skill repository: `npm run changeset`, `npm run version`, `npm run release`.
+- Choose major for an incompatible rule change.
+- Choose minor for a new preset, rule, or template.
+- Choose patch for corrections and clarifications.
 - Every change to a preset also bumps the preset version.
 
 ## Ready set

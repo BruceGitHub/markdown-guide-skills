@@ -6,7 +6,9 @@
   "scripts": {
     "changeset": "changeset",
     "version": "changeset version && node scripts/sync-skill-version.mjs && npm install --package-lock-only",
-    "release": "changeset git-tag"
+    "release": "changeset git-tag",
+    "presets": "node skills/markdown-guide/scripts/list-presets.mjs",
+    "test": "node --test"
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.3"

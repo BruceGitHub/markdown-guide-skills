@@ -16,7 +16,7 @@ function update(file, transform) {
   console.log(`No change in ${file}`);
 }
 
-update("SKILL.md", (text) =>
+update("skills/markdown-guide/SKILL.md", (text) =>
   text.replace(/^  version: "[^"]+"$/m, `  version: "${version}"`)
 );
 
