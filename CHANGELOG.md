@@ -2,6 +2,12 @@
 
 Changes to the skill, newest first.
 
+## 1.7.1
+
+### Patch Changes
+
+- 8896e2b: Fix CRLF and BOM handling in preset listing and version sync.
+
 ## 1.7.0
 
 ### Minor Changes
