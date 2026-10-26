@@ -2,6 +2,17 @@
 
 Changes to the skill, newest first.
 
+## 1.8.0
+
+### Minor Changes
+
+- e67e716: Add the `/create-template` command for custom Markdown templates.
+- e67e716: Add `todo-list` and `glossary` presets, and return preset list/search as Markdown tables.
+
+### Patch Changes
+
+- e67e716: Reorder the README so installation and commands appear first.
+
 ## 1.7.1
 
 ### Patch Changes
