@@ -58,6 +58,45 @@ test("syncs the package version into SKILL.md and README.md", () => {
   }
 });
 
+test("handles CRLF line endings", () => {
+  const root = createFixture();
+
+  try {
+    writeFileSync(
+      join(root, "skills", "markdown-guide", "SKILL.md"),
+      [
+        "---",
+        "name: Fixture",
+        "metadata:",
+        '  version: "1.0.0"',
+        "---",
+        "",
+      ].join("\r\n")
+    );
+    writeFileSync(
+      join(root, "README.md"),
+      "Current version: 1.0.0. See `CHANGELOG.md`.\r\n"
+    );
+
+    const result = spawnSync(process.execPath, [script], {
+      cwd: root,
+      encoding: "utf8",
+    });
+
+    assert.equal(result.status, 0);
+    assert.match(
+      readFileSync(join(root, "skills", "markdown-guide", "SKILL.md"), "utf8"),
+      /version: "9\.9\.9"/
+    );
+    assert.match(
+      readFileSync(join(root, "README.md"), "utf8"),
+      /Current version: 9\.9\.9\./
+    );
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
 test("is idempotent when the version is already aligned", () => {
   const root = createFixture();
   writeFileSync(

@@ -1,6 +1,15 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
+import {
+  copyFileSync,
+  mkdirSync,
+  mkdtempSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const script = fileURLToPath(
@@ -49,4 +58,39 @@ test("returns a non-zero exit code when nothing matches", () => {
 
   assert.equal(result.status, 1);
   assert.match(result.stderr, /No presets match/);
+});
+
+test("parses CRLF and BOM line endings", () => {
+  const root = mkdtempSync(join(tmpdir(), "markdown-guide-crlf-"));
+  const copiedScript = join(root, "scripts", "list-presets.mjs");
+
+  try {
+    mkdirSync(join(root, "scripts"));
+    mkdirSync(join(root, "presets"));
+    copyFileSync(script, copiedScript);
+
+    const fixture = [
+      "\uFEFF---",
+      "id: crlf",
+      "status: active",
+      "applies-to: [ui, test]",
+      "---",
+      "",
+      "## Purpose",
+      "",
+      "CRLF fixture.",
+      "",
+    ].join("\r\n");
+
+    writeFileSync(join(root, "presets", "crlf.md"), fixture);
+
+    const result = spawnSync(process.execPath, [copiedScript], {
+      encoding: "utf8",
+    });
+
+    assert.equal(result.status, 0);
+    assert.match(result.stdout, /crlf\s+active\s+ui, test\s+CRLF fixture\./);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
 });

@@ -4,7 +4,9 @@ const pkg = JSON.parse(readFileSync("package.json", "utf8"));
 const version = pkg.version;
 
 function update(file, transform) {
-  const before = readFileSync(file, "utf8");
+  const before = readFileSync(file, "utf8")
+    .replace(/^\uFEFF/, "")
+    .replace(/\r\n?/g, "\n");
   const after = transform(before);
 
   if (after !== before) {

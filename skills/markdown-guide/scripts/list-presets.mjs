@@ -4,6 +4,10 @@ const presetsDir = new URL("../presets/", import.meta.url);
 const args = process.argv.slice(2);
 const query = (args[0] === "--search" ? args.slice(1) : args).join(" ").trim().toLowerCase();
 
+function normalizeText(text) {
+  return text.replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n");
+}
+
 function parseFrontmatter(text) {
   if (!text.startsWith("---\n")) return {};
 
@@ -20,19 +24,19 @@ function parseFrontmatter(text) {
       data[key] = raw
         .replace(/^\[|\]$/g, "")
         .split(",")
-        .map((value) => value.trim())
+        .map((value) => value.trim().replace(/^"|"$/g, ""))
         .filter(Boolean);
       continue;
     }
 
-    data[key] = raw.replace(/^"|"$/g, "");
+    data[key] = raw.trim().replace(/^"|"$/g, "");
   }
 
   return data;
 }
 
 function getPurpose(text) {
-  const match = text.match(/## Purpose\n\n([\s\S]*?)(?=\n\n|\n## )/);
+  const match = text.match(/## Purpose\n\n([\s\S]*?)(?=\n\n|\n## |$)/);
   return match ? match[1].replace(/\s+/g, " ").trim() : "";
 }
 
@@ -40,7 +44,7 @@ const presets = readdirSync(presetsDir)
   .filter((file) => file.endsWith(".md") && file !== "index.md")
   .sort()
   .map((file) => {
-    const text = readFileSync(new URL(file, presetsDir), "utf8");
+    const text = normalizeText(readFileSync(new URL(file, presetsDir), "utf8"));
     const data = parseFrontmatter(text);
     return {
       id: data.id ?? file.replace(/\.md$/, ""),
