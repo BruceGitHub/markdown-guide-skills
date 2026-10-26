@@ -135,6 +135,8 @@ Rules:
 
 Templates in `templates/` are skeletons. Each preset also contains a mandatory structure block that can be used as a template for that document type. A user-specified template takes precedence over built-in templates.
 
+Create a custom template with `/create-template <directory> <purpose>`. The command reads the built-in templates and presets, asks for missing details, and writes a reusable template with the same structure and placeholders.
+
 Rules:
 
 - Before creating a document or a template, determine the template.
@@ -164,6 +166,7 @@ Included presets:
 - `adr` — architecture decision record.
 - `rfc` — design proposal with open questions and decisions.
 - `prd` — product requirements with goals, requirements, and metrics.
+- `glossary` — stable terms, definitions, aliases, and references.
 - `stitch-design` — Google Stitch DESIGN.md design system with YAML tokens and design rationale.
 - `api-spec` — API contract with endpoints, schemas, errors, and examples.
 - `bug-report` — reproducible defect with environment, triage, and evidence.
@@ -175,5 +178,6 @@ Included presets:
 - `changelog` — ongoing versioned log following Keep a Changelog and SemVer.
 - `threat-model` — assets, trust boundaries, threats, mitigations, and residual risks.
 - `checklist` — repeatable checks with owners, expected results, and exceptions.
+- `todo-list` — open tasks with owner, priority, due date, and completed items.
 
 Every new preset follows the format above and does not modify the core.

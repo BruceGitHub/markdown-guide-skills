@@ -151,6 +151,8 @@ Update an installed copy with `npx skills update "Markdown Guide" -y`. Use `-g` 
 
 The skill is extensible on three levels: presets in `presets/` and `custom/presets/`, custom rules in `custom/rules.md`, templates in `templates/`. Read `references/extension.md` before adding a preset or custom rule. Do not modify existing presets for customization: use `custom/`.
 
+When the `/create-template` command is available, use it to create a custom template in a target directory. It follows the same structure as the built-in templates.
+
 ## Checklist
 
 C1 — Abstract present, at most 30 words.

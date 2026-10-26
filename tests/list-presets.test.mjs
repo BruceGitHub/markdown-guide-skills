@@ -24,33 +24,35 @@ test("lists all presets", () => {
   const result = run();
 
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /ID\s+STATUS\s+APPLIES TO\s+PURPOSE/);
-  assert.match(result.stdout, /\bproject\b/);
-  assert.match(result.stdout, /\bstitch-design\b/);
-  assert.match(result.stdout, /\badr\b/);
+  assert.match(result.stdout, /\| ID \| Status \| Applies to \| Purpose \|/);
+  assert.match(result.stdout, /\| project \| active \|/);
+  assert.match(result.stdout, /\| stitch-design \| active \|/);
+  assert.match(result.stdout, /\| adr \| active \|/);
+  assert.match(result.stdout, /\| todo-list \| active \|/);
+  assert.match(result.stdout, /\| glossary \| active \|/);
 });
 
 test("searches by id", () => {
   const result = run("adr");
 
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /\badr\b/);
-  assert.doesNotMatch(result.stdout, /\bstitch-design\b/);
+  assert.match(result.stdout, /\| adr \| active \|/);
+  assert.doesNotMatch(result.stdout, /stitch-design/);
 });
 
 test("searches by applies-to and purpose", () => {
   const result = run("ui");
 
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /\bstitch-design\b/);
+  assert.match(result.stdout, /\| stitch-design \| active \|/);
 });
 
 test("searches cases where the query matches multiple presets", () => {
   const result = run("incident");
 
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /\bincident\b/);
-  assert.match(result.stdout, /\bpost-mortem\b/);
+  assert.match(result.stdout, /\| incident \| active \|/);
+  assert.match(result.stdout, /\| post-mortem \| active \|/);
 });
 
 test("returns a non-zero exit code when nothing matches", () => {
@@ -58,6 +60,15 @@ test("returns a non-zero exit code when nothing matches", () => {
 
   assert.equal(result.status, 1);
   assert.match(result.stderr, /No presets match/);
+});
+
+test("supports plain text output", () => {
+  const result = run("--plain", "adr");
+
+  assert.equal(result.status, 0);
+  assert.match(result.stdout, /ID\s+STATUS\s+APPLIES TO\s+PURPOSE/);
+  assert.match(result.stdout, /adr\s+active/);
+  assert.doesNotMatch(result.stdout, /^\| ID/m);
 });
 
 test("parses CRLF and BOM line endings", () => {
@@ -89,7 +100,7 @@ test("parses CRLF and BOM line endings", () => {
     });
 
     assert.equal(result.status, 0);
-    assert.match(result.stdout, /crlf\s+active\s+ui, test\s+CRLF fixture\./);
+    assert.match(result.stdout, /\| crlf \| active \| ui, test \| CRLF fixture\. \|/);
   } finally {
     rmSync(root, { recursive: true, force: true });
   }

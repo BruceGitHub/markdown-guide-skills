@@ -1,7 +1,9 @@
 import { readFileSync, readdirSync } from "node:fs";
 
 const presetsDir = new URL("../presets/", import.meta.url);
-const args = process.argv.slice(2);
+const rawArgs = process.argv.slice(2);
+const plain = rawArgs.includes("--plain");
+const args = rawArgs.filter((arg) => arg !== "--plain");
 const query = (args[0] === "--search" ? args.slice(1) : args).join(" ").trim().toLowerCase();
 
 function normalizeText(text) {
@@ -68,20 +70,35 @@ if (matches.length === 0) {
   process.exit(1);
 }
 
-const rows = [
-  ["ID", "STATUS", "APPLIES TO", "PURPOSE"],
-  ...matches.map((preset) => [
-    preset.id,
-    preset.status,
-    preset.appliesTo.join(", "),
-    preset.purpose,
-  ]),
-];
+if (plain) {
+  const rows = [
+    ["ID", "STATUS", "APPLIES TO", "PURPOSE"],
+    ...matches.map((preset) => [
+      preset.id,
+      preset.status,
+      preset.appliesTo.join(", "),
+      preset.purpose,
+    ]),
+  ];
 
-const widths = rows[0].map((_, column) =>
-  Math.max(...rows.map((row) => row[column].length))
-);
+  const widths = rows[0].map((_, column) =>
+    Math.max(...rows.map((row) => row[column].length))
+  );
 
-for (const row of rows) {
-  console.log(row.map((value, column) => value.padEnd(widths[column])).join("  "));
+  for (const row of rows) {
+    console.log(row.map((value, column) => value.padEnd(widths[column])).join("  "));
+  }
+} else {
+  const escape = (value) => String(value).replace(/\|/g, "\\|").replace(/\n/g, " ");
+
+  console.log("| ID | Status | Applies to | Purpose |");
+  console.log("| --- | --- | --- | --- |");
+
+  for (const preset of matches) {
+    console.log(
+      `| ${escape(preset.id)} | ${escape(preset.status)} | ${escape(
+        preset.appliesTo.join(", ")
+      )} | ${escape(preset.purpose)} |`
+    );
+  }
 }

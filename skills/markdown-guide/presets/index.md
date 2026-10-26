@@ -9,6 +9,7 @@ Presets add rules for a document type. Core rules stay active. A preset cannot r
 | adr | [adr.md](./adr.md) | 1.0.0 | active | adr, architecture decision, decision record | — |
 | rfc | [rfc.md](./rfc.md) | 1.0.0 | active | rfc, proposal, design proposal | — |
 | prd | [prd.md](./prd.md) | 1.0.0 | active | prd, product requirements, requirements | — |
+| glossary | [glossary.md](./glossary.md) | 1.0.0 | active | glossary, terminology, terms, dictionary | — |
 | stitch-design | [stitch-design.md](./stitch-design.md) | 1.0.0 | active | design system, design.md, stitch, ui design | — |
 | api-spec | [api-spec.md](./api-spec.md) | 1.0.0 | active | api, api spec, endpoint, contract | — |
 | bug-report | [bug-report.md](./bug-report.md) | 1.0.0 | active | bug, bug report, defect | — |
@@ -20,6 +21,7 @@ Presets add rules for a document type. Core rules stay active. A preset cannot r
 | changelog | [changelog.md](./changelog.md) | 1.0.0 | active | changelog, release history, version history | — |
 | threat-model | [threat-model.md](./threat-model.md) | 1.0.0 | active | threat model, security, risk assessment | — |
 | checklist | [checklist.md](./checklist.md) | 1.0.0 | active | checklist, verification, operations | — |
+| todo-list | [todo-list.md](./todo-list.md) | 1.0.0 | active | todo, todo list, tasks, task list | — |
 
 ## Selection
 

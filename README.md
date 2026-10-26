@@ -2,100 +2,6 @@
 
 Reusable OpenCode skill for creating and maintaining Markdown documents with a consistent structure: a short abstract, explicit anchors and navigation, reverse-chronological change history, semantic IDs, and extensible presets.
 
-## Motivation
-
-Markdown is portable as a file format, but not as a document convention. Teams, repositories, and tools use different structures for metadata, navigation, decisions, and history. This skill defines a known and defined schema for those conventions. With that schema, a Markdown document can be validated, parsed, and moved from one place to another without losing context, links, or traceability.
-
-## Contents
-
-| Path | Purpose |
-| --- | --- |
-| `skills/markdown-guide/SKILL.md` | Skill entry point and mandatory rules |
-| `skills/markdown-guide/references/` | Detailed rules, style, and extension guide |
-| `skills/markdown-guide/presets/` | Preset registry and built-in presets |
-| `skills/markdown-guide/custom/` | User rules and custom preset example |
-| `skills/markdown-guide/templates/` | Generic and project skeletons |
-| `skills/markdown-guide/examples/` | Complete example documents |
-| `skills/markdown-guide/scripts/list-presets.mjs` | Preset list and search script shipped with the skill |
-| `.changeset/` | Changesets configuration and pending changesets |
-| `.opencode/commands/presets.md` | `/presets` command to list and search presets |
-| `.opencode/commands/update-skill.md` | `/update-markdown-guide` command to update the installed skill |
-| `scripts/sync-skill-version.mjs` | Development script that syncs the package version |
-| `tests/` | Tests for the skill scripts |
-| `CHANGELOG.md` | Skill version history |
-
-## Core rules
-
-- Metadata is a compact two-row table.
-- Every document opens with a short abstract of at most 30 words.
-- Every H2 has an explicit `s-<slug>` anchor.
-- Every section links back to the top and to the parent or index.
-- Change history is reverse-chronological and versioned with semver.
-- Citable items use semantic IDs defined by the selected preset.
-- Automatic numbered lists and checkboxes are forbidden.
-- Exceptions are recorded in `## Constraints` with date, requester, and scope.
-- `## Constraints` is always present, even when empty.
-- Closed items are struck through and kept in the document.
-
-## Commands
-
-`/presets [query]` lists or searches the built-in presets.
-
-- `/presets` — list every preset.
-- `/presets adr` — find presets matching `adr`.
-- `/presets incident` — find presets matching `incident`.
-
-`/update-markdown-guide` updates an installed copy with `npx skills update "Markdown Guide" -y`.
-
-From a terminal:
-
-```bash
-npm run presets
-npm run presets -- ui
-```
-
-The commands work when this repository is the active OpenCode project. Installed copies include `scripts/list-presets.mjs` inside the skill directory for the same search.
-
-## Presets and customization
-
-Built-in presets:
-
-| Preset | Use |
-| --- | --- |
-| `project` | Project plans, specifications, architecture notes, and decision logs. |
-| `meeting-notes` | Decisions and actions from a meeting. |
-| `adr` | One architecture decision with consequences and alternatives. |
-| `rfc` | Design proposal with requirements, open questions, and decisions. |
-| `prd` | Product problem, goals, requirements, and metrics. |
-| `stitch-design` | Google Stitch DESIGN.md design system with YAML tokens and design rationale. |
-| `api-spec` | API contract with endpoints, schemas, errors, and examples. |
-| `bug-report` | Reproducible defect with environment, triage, and evidence. |
-| `post-mortem` | Incident review with timeline, causes, and actions. |
-| `incident` | Active or recent incident with severity, timeline, mitigation, and communication. |
-| `runbook` | Operational procedure with verification, rollback, and escalation. |
-| `migration-plan` | Migration or cutover with validation, rollback, and communication. |
-| `release-notes` | Release highlights, breaking changes, features, fixes, and upgrades. |
-| `changelog` | Ongoing versioned log following Keep a Changelog and SemVer. |
-| `threat-model` | Assets, trust boundaries, threats, mitigations, and residual risks. |
-| `checklist` | Repeatable checks with owners, expected results, and exceptions. |
-
-Choose the narrowest preset. A specific preset such as `adr` takes precedence over `project` for the same document.
-
-To add a preset, create `skills/markdown-guide/presets/<id>.md` with the documented frontmatter, add a row to `skills/markdown-guide/presets/index.md`, and add a changeset with `npm run changeset`.
-
-User customizations:
-
-- `skills/markdown-guide/custom/rules.md` for user rules.
-- `skills/markdown-guide/custom/presets/<id>.md` for user presets.
-
-Precedence on conflict: mandatory core, explicit user instruction, template, custom rules, presets, skill defaults. Every deviation from the core is recorded in the generated document.
-
-## Templates and examples
-
-Use `skills/markdown-guide/templates/document.md` as the generic skeleton. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `skills/markdown-guide/examples/` contains complete, reusable references.
-
-Before creating a document, the skill determines the template. If it cannot infer one from the request, the target directory, or an existing file, it asks the user which template to use instead of choosing silently.
-
 ## Install
 
 Copy only the skill folder into an OpenCode skill source:
@@ -176,6 +82,114 @@ The repository follows the Agent Skills layout: a folder with `SKILL.md` plus su
 | Other Agent Skills hosts | Check | Verify `SKILL.md` discovery and supporting-file access. |
 
 To see which agents the CLI detects, run `npx skills add BruceGitHub/markdown-guide-skills` without `-a`; it prompts with the detected agents. Check the agent documentation for `SKILL.md` support before relying on automatic or manual invocation.
+
+## Commands
+
+`/presets [query]` lists or searches the built-in presets.
+
+- `/presets` — list every preset.
+- `/presets adr` — find presets matching `adr`.
+- `/presets incident` — find presets matching `incident`.
+
+Both list and search return a Markdown table with ID, status, applies-to, and purpose.
+
+`/update-markdown-guide` updates an installed copy with `npx skills update "Markdown Guide" -y`.
+
+`/create-template <directory> <purpose>` creates a reusable custom template in the target directory, following the structure of the built-in templates:
+
+```text
+/create-template ./templates incident review
+/create-template ./docs/templates api endpoint
+```
+
+From a terminal:
+
+```bash
+npm run presets
+npm run presets -- ui
+```
+
+The commands work when this repository is the active OpenCode project. To use them elsewhere, copy `.opencode/commands/*.md` to `~/.config/opencode/commands/`. Installed copies include `scripts/list-presets.mjs` inside the skill directory for the same search.
+
+## Motivation
+
+Markdown is portable as a file format, but not as a document convention. Teams, repositories, and tools use different structures for metadata, navigation, decisions, and history. This skill defines a known and defined schema for those conventions. With that schema, a Markdown document can be validated, parsed, and moved from one place to another without losing context, links, or traceability.
+
+## Contents
+
+| Path | Purpose |
+| --- | --- |
+| `skills/markdown-guide/SKILL.md` | Skill entry point and mandatory rules |
+| `skills/markdown-guide/references/` | Detailed rules, style, and extension guide |
+| `skills/markdown-guide/presets/` | Preset registry and built-in presets |
+| `skills/markdown-guide/custom/` | User rules and custom preset example |
+| `skills/markdown-guide/templates/` | Generic and project skeletons |
+| `skills/markdown-guide/examples/` | Complete example documents |
+| `skills/markdown-guide/scripts/list-presets.mjs` | Preset list and search script shipped with the skill |
+| `.changeset/` | Changesets configuration and pending changesets |
+| `.opencode/commands/presets.md` | `/presets` command to list and search presets |
+| `.opencode/commands/create-template.md` | `/create-template` command to create a custom template |
+| `.opencode/commands/update-skill.md` | `/update-markdown-guide` command to update the installed skill |
+| `scripts/sync-skill-version.mjs` | Development script that syncs the package version |
+| `tests/` | Tests for the skill scripts |
+| `CHANGELOG.md` | Skill version history |
+
+## Core rules
+
+- Metadata is a compact two-row table.
+- Every document opens with a short abstract of at most 30 words.
+- Every H2 has an explicit `s-<slug>` anchor.
+- Every section links back to the top and to the parent or index.
+- Change history is reverse-chronological and versioned with semver.
+- Citable items use semantic IDs defined by the selected preset.
+- Automatic numbered lists and checkboxes are forbidden.
+- Exceptions are recorded in `## Constraints` with date, requester, and scope.
+- `## Constraints` is always present, even when empty.
+- Closed items are struck through and kept in the document.
+
+## Presets and customization
+
+Built-in presets:
+
+| Preset | Use |
+| --- | --- |
+| `project` | Project plans, specifications, architecture notes, and decision logs. |
+| `meeting-notes` | Decisions and actions from a meeting. |
+| `adr` | One architecture decision with consequences and alternatives. |
+| `rfc` | Design proposal with requirements, open questions, and decisions. |
+| `prd` | Product problem, goals, requirements, and metrics. |
+| `glossary` | Stable terms, definitions, aliases, and references. |
+| `stitch-design` | Google Stitch DESIGN.md design system with YAML tokens and design rationale. |
+| `api-spec` | API contract with endpoints, schemas, errors, and examples. |
+| `bug-report` | Reproducible defect with environment, triage, and evidence. |
+| `post-mortem` | Incident review with timeline, causes, and actions. |
+| `incident` | Active or recent incident with severity, timeline, mitigation, and communication. |
+| `runbook` | Operational procedure with verification, rollback, and escalation. |
+| `migration-plan` | Migration or cutover with validation, rollback, and communication. |
+| `release-notes` | Release highlights, breaking changes, features, fixes, and upgrades. |
+| `changelog` | Ongoing versioned log following Keep a Changelog and SemVer. |
+| `threat-model` | Assets, trust boundaries, threats, mitigations, and residual risks. |
+| `checklist` | Repeatable checks with owners, expected results, and exceptions. |
+| `todo-list` | Open tasks with owner, priority, due date, and completed items. |
+
+Choose the narrowest preset. A specific preset such as `adr` takes precedence over `project` for the same document.
+
+To add a preset, create `skills/markdown-guide/presets/<id>.md` with the documented frontmatter, add a row to `skills/markdown-guide/presets/index.md`, and add a changeset with `npm run changeset`.
+
+User customizations:
+
+- `skills/markdown-guide/custom/rules.md` for user rules.
+- `skills/markdown-guide/custom/presets/<id>.md` for user presets.
+
+Precedence on conflict: mandatory core, explicit user instruction, template, custom rules, presets, skill defaults. Every deviation from the core is recorded in the generated document.
+
+## Templates and examples
+
+Use `skills/markdown-guide/templates/document.md` as the generic skeleton. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `skills/markdown-guide/examples/` contains complete, reusable references.
+
+To create a custom template, use `/create-template <directory> <purpose>`. The command reads the built-in templates and presets, asks for missing details, and writes a reusable template with the same structure and placeholders.
+
+Before creating a document, the skill determines the template. If it cannot infer one from the request, the target directory, or an existing file, it asks the user which template to use instead of choosing silently.
 
 ## Versioning
 
