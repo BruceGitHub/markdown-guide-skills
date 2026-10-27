@@ -2,6 +2,15 @@
 
 Changes to the skill, newest first.
 
+## 1.9.0
+
+### Minor Changes
+
+- 1daaf71: Add the acceptance-criteria preset and Gherkin template.
+- 1daaf71: Add the `code-review` preset and `templates/code-review.md`.
+- 1daaf71: Add the test-plan, risk-register, and technical-design presets and templates.
+- 1daaf71: Add development-plan tracking and topic-index presets and templates.
+
 ## 1.8.0
 
 ### Minor Changes

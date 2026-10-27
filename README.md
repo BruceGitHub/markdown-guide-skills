@@ -225,4 +225,4 @@ Only `skills/markdown-guide/` is installed. Tests, Changesets, package metadata,
 
 ## Version
 
-Current version: 1.8.0. See `CHANGELOG.md`.
+Current version: 1.9.0. See `CHANGELOG.md`.
