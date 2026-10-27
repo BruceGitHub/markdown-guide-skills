@@ -30,6 +30,54 @@ test("lists all presets", () => {
   assert.match(result.stdout, /\| adr \| active \|/);
   assert.match(result.stdout, /\| todo-list \| active \|/);
   assert.match(result.stdout, /\| glossary \| active \|/);
+  assert.match(result.stdout, /\| code-review \| active \|/);
+  assert.match(result.stdout, /\| acceptance-criteria \| active \|/);
+  assert.match(result.stdout, /\| test-plan \| active \|/);
+  assert.match(result.stdout, /\| risk-register \| active \|/);
+  assert.match(result.stdout, /\| technical-design \| active \|/);
+  assert.match(result.stdout, /\| development-plan \| active \|/);
+  assert.match(result.stdout, /\| topic-index \| active \|/);
+});
+
+test("searches tracking and index presets", () => {
+  const tracking = run("tracking");
+  const index = run("index");
+
+  assert.equal(tracking.status, 0);
+  assert.match(tracking.stdout, /\| development-plan \| active \|/);
+
+  assert.equal(index.status, 0);
+  assert.match(index.stdout, /\| topic-index \| active \|/);
+});
+
+test("searches planning presets", () => {
+  const risk = run("risk");
+  const design = run("design");
+  const testPlan = run("test plan");
+
+  assert.equal(risk.status, 0);
+  assert.match(risk.stdout, /\| risk-register \| active \|/);
+
+  assert.equal(design.status, 0);
+  assert.match(design.stdout, /\| technical-design \| active \|/);
+
+  assert.equal(testPlan.status, 0);
+  assert.match(testPlan.stdout, /\| test-plan \| active \|/);
+});
+
+test("searches acceptance criteria by the CDA alias", () => {
+  const result = run("cda");
+
+  assert.equal(result.status, 0);
+  assert.match(result.stdout, /\| acceptance-criteria \| active \|/);
+});
+
+test("searches review presets", () => {
+  const result = run("review");
+
+  assert.equal(result.status, 0);
+  assert.match(result.stdout, /\| code-review \| active \|/);
+  assert.match(result.stdout, /\| post-mortem \| active \|/);
 });
 
 test("searches by id", () => {

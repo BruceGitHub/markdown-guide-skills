@@ -154,11 +154,17 @@ Built-in presets:
 | Preset | Use |
 | --- | --- |
 | `project` | Project plans, specifications, architecture notes, and decision logs. |
+| `development-plan` | Track phases, open questions, decisions, tasks, new items, and progress. |
 | `meeting-notes` | Decisions and actions from a meeting. |
 | `adr` | One architecture decision with consequences and alternatives. |
 | `rfc` | Design proposal with requirements, open questions, and decisions. |
+| `technical-design` | Technical design with architecture, components, interfaces, risks, and rollout. |
 | `prd` | Product problem, goals, requirements, and metrics. |
+| `code-review` | Pull request or diff review with verdict, findings, tests, and actions. |
+| `acceptance-criteria` | Testable CDA as Gherkin scenarios with traceability and tests. |
+| `test-plan` | Strategy, environments, test cases, criteria, risks, and results. |
 | `glossary` | Stable terms, definitions, aliases, and references. |
+| `topic-index` | Topic catalog organized by category, status, owner, and update date. |
 | `stitch-design` | Google Stitch DESIGN.md design system with YAML tokens and design rationale. |
 | `api-spec` | API contract with endpoints, schemas, errors, and examples. |
 | `bug-report` | Reproducible defect with environment, triage, and evidence. |
@@ -169,6 +175,7 @@ Built-in presets:
 | `release-notes` | Release highlights, breaking changes, features, fixes, and upgrades. |
 | `changelog` | Ongoing versioned log following Keep a Changelog and SemVer. |
 | `threat-model` | Assets, trust boundaries, threats, mitigations, and residual risks. |
+| `risk-register` | Risks with likelihood, impact, owner, mitigation, and status. |
 | `checklist` | Repeatable checks with owners, expected results, and exceptions. |
 | `todo-list` | Open tasks with owner, priority, due date, and completed items. |
 
@@ -185,7 +192,7 @@ Precedence on conflict: mandatory core, explicit user instruction, template, cus
 
 ## Templates and examples
 
-Use `skills/markdown-guide/templates/document.md` as the generic skeleton. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `skills/markdown-guide/examples/` contains complete, reusable references.
+Use `skills/markdown-guide/templates/document.md` as the generic skeleton, `skills/markdown-guide/templates/code-review.md` for a review, `skills/markdown-guide/templates/acceptance-criteria.md` for Gherkin acceptance criteria, and `skills/markdown-guide/templates/{test-plan,risk-register,technical-design,development-plan,topic-index}.md` for planning and indexing. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `skills/markdown-guide/examples/` contains complete, reusable references.
 
 To create a custom template, use `/create-template <directory> <purpose>`. The command reads the built-in templates and presets, asks for missing details, and writes a reusable template with the same structure and placeholders.
 

@@ -162,11 +162,17 @@ Rules:
 Included presets:
 
 - `project` — project document with DP, DA, DF, references, and history.
+- `development-plan` — track phases, open questions, decisions, tasks, new items, and progress.
 - `meeting-notes` — meeting notes with decisions and actions.
 - `adr` — architecture decision record.
 - `rfc` — design proposal with open questions and decisions.
+- `technical-design` — technical design with architecture, components, interfaces, risks, and rollout.
 - `prd` — product requirements with goals, requirements, and metrics.
+- `code-review` — pull request or diff review with verdict, findings, tests, and actions.
+- `acceptance-criteria` — testable CDA as Gherkin scenarios with traceability and tests.
+- `test-plan` — strategy, environments, test cases, criteria, risks, and results.
 - `glossary` — stable terms, definitions, aliases, and references.
+- `topic-index` — topic catalog organized by category, status, owner, and update date.
 - `stitch-design` — Google Stitch DESIGN.md design system with YAML tokens and design rationale.
 - `api-spec` — API contract with endpoints, schemas, errors, and examples.
 - `bug-report` — reproducible defect with environment, triage, and evidence.
@@ -177,6 +183,7 @@ Included presets:
 - `release-notes` — release highlights, breaking changes, features, fixes, and upgrades.
 - `changelog` — ongoing versioned log following Keep a Changelog and SemVer.
 - `threat-model` — assets, trust boundaries, threats, mitigations, and residual risks.
+- `risk-register` — risks with likelihood, impact, owner, mitigation, and status.
 - `checklist` — repeatable checks with owners, expected results, and exceptions.
 - `todo-list` — open tasks with owner, priority, due date, and completed items.
 
