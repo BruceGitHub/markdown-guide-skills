@@ -2,6 +2,21 @@
 
 Changes to the skill, newest first.
 
+## 1.10.0
+
+### Minor Changes
+
+- 9d42a8b: Add a flows section with the project-to-delivery example, plus release-notes and changelog templates.
+- 9d42a8b: Add the `/markdown-guide-help` command.
+- 9d42a8b: Add the review-followup preset and template.
+
+### Patch Changes
+
+- 9d42a8b: Use a slug for the skill name so Claude Code exposes `/markdown-guide` without spaces.
+- 9d42a8b: Minimize the mandatory rules in SKILL.md while keeping the same structure; details remain in the references.
+- 9d42a8b: Add a root wrapper so `node scripts/list-presets.mjs` works from the repository root.
+- 9d42a8b: Reorganize the README, add a skill size badge, add CONTRIBUTING.md, and add the pull request template.
+
 ## 1.9.0
 
 ### Minor Changes

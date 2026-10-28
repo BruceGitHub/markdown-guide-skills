@@ -279,4 +279,4 @@ Use [`.github/pull_request_template.md`](./.github/pull_request_template.md) whe
 
 ## Version
 
-Current version: 1.9.0. See `CHANGELOG.md`.
+Current version: 1.10.0. See `CHANGELOG.md`.
