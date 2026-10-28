@@ -169,6 +169,7 @@ Included presets:
 - `technical-design` — technical design with architecture, components, interfaces, risks, and rollout.
 - `prd` — product requirements with goals, requirements, and metrics.
 - `code-review` — pull request or diff review with verdict, findings, tests, and actions.
+- `review-followup` — track review comments through triage, decision, fix, verification, and closure.
 - `acceptance-criteria` — testable CDA as Gherkin scenarios with traceability and tests.
 - `test-plan` — strategy, environments, test cases, criteria, risks, and results.
 - `glossary` — stable terms, definitions, aliases, and references.

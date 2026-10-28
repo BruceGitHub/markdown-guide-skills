@@ -12,6 +12,7 @@ Presets add rules for a document type. Core rules stay active. A preset cannot r
 | technical-design | [technical-design.md](./technical-design.md) | 1.0.0 | active | technical design, design doc, architecture design | — |
 | prd | [prd.md](./prd.md) | 1.0.0 | active | prd, product requirements, requirements | — |
 | code-review | [code-review.md](./code-review.md) | 1.0.0 | active | code review, pull request review, pr review, diff review | — |
+| review-followup | [review-followup.md](./review-followup.md) | 1.0.0 | active | review followup, followup review, review resolution, pr comments, merge request comments | — |
 | acceptance-criteria | [acceptance-criteria.md](./acceptance-criteria.md) | 1.0.0 | active | cda, criteri di accettazione, acceptance criteria, gherkin, bdd | — |
 | test-plan | [test-plan.md](./test-plan.md) | 1.0.0 | active | test plan, test strategy, qa plan, verification plan | — |
 | glossary | [glossary.md](./glossary.md) | 1.0.0 | active | glossary, terminology, terms, dictionary | — |

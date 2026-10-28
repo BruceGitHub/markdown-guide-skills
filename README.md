@@ -1,6 +1,15 @@
 # Markdown Guide
 
+![Version](https://img.shields.io/github/v/tag/BruceGitHub/markdown-guide-skills?label=version)
+![Skill size](https://img.shields.io/badge/skill%20size-344%20KB-blue)
+
 Reusable OpenCode skill for creating and maintaining Markdown documents with a consistent structure: a short abstract, explicit anchors and navigation, reverse-chronological change history, semantic IDs, and extensible presets.
+
+[Install](#install) · [Usage](#usage) · [Presets](#presets) · [Contributing](#contributing)
+
+## Motivation
+
+Markdown is portable as a file format, but not as a document convention. Teams, repositories, and tools use different structures for metadata, navigation, decisions, and history. This skill defines a known and defined schema for those conventions. With that schema, a Markdown document can be validated, parsed, and moved from one place to another without losing context, links, or traceability.
 
 ## Install
 
@@ -54,10 +63,10 @@ The CLI installs only `skills/markdown-guide/`. Tests, Changesets, and developme
 Update an installed copy:
 
 ```bash
-npx skills update "Markdown Guide" -y
+npx skills update markdown-guide -y
 ```
 
-Use `-g` for a global installation or `-p` for a project installation.
+Use `-g` for a global installation or `-p` for a project installation. Existing installs created with the old display name may need `npx skills update "Markdown Guide" -y` once.
 
 ### Manual activation
 
@@ -83,7 +92,30 @@ The repository follows the Agent Skills layout: a folder with `SKILL.md` plus su
 
 To see which agents the CLI detects, run `npx skills add BruceGitHub/markdown-guide-skills` without `-a`; it prompts with the detected agents. Check the agent documentation for `SKILL.md` support before relying on automatic or manual invocation.
 
-## Commands
+## Usage
+
+### Load the skill
+
+- OpenCode: `@markdown-guide` or `/skills`.
+- Claude Code and Cursor: `/markdown-guide`.
+- Codex: `$markdown-guide`.
+
+### Create or update a document
+
+Ask for the document type and the target location. Examples:
+
+```text
+Create a project plan in docs/
+Review this pull request with code-review
+Create Gherkin acceptance criteria for checkout
+Create a runbook for the payments service
+```
+
+The skill selects the narrowest preset. If the template or preset cannot be inferred, it asks before writing.
+
+### Commands
+
+`/markdown-guide-help [topic]` shows help for the skill, commands, presets, templates, installation, and rules.
 
 `/presets [query]` lists or searches the built-in presets.
 
@@ -93,7 +125,7 @@ To see which agents the CLI detects, run `npx skills add BruceGitHub/markdown-gu
 
 Both list and search return a Markdown table with ID, status, applies-to, and purpose.
 
-`/update-markdown-guide` updates an installed copy with `npx skills update "Markdown Guide" -y`.
+`/update-markdown-guide` updates an installed copy with `npx skills update markdown-guide -y`.
 
 `/create-template <directory> <purpose>` creates a reusable custom template in the target directory, following the structure of the built-in templates:
 
@@ -111,43 +143,9 @@ npm run presets -- ui
 
 The commands work when this repository is the active OpenCode project. To use them elsewhere, copy `.opencode/commands/*.md` to `~/.config/opencode/commands/`. Installed copies include `scripts/list-presets.mjs` inside the skill directory for the same search.
 
-## Motivation
+These are OpenCode commands. In Claude Code, invoke the skill with `/markdown-guide` and ask for help; the skill includes a Help section.
 
-Markdown is portable as a file format, but not as a document convention. Teams, repositories, and tools use different structures for metadata, navigation, decisions, and history. This skill defines a known and defined schema for those conventions. With that schema, a Markdown document can be validated, parsed, and moved from one place to another without losing context, links, or traceability.
-
-## Contents
-
-| Path | Purpose |
-| --- | --- |
-| `skills/markdown-guide/SKILL.md` | Skill entry point and mandatory rules |
-| `skills/markdown-guide/references/` | Detailed rules, style, and extension guide |
-| `skills/markdown-guide/presets/` | Preset registry and built-in presets |
-| `skills/markdown-guide/custom/` | User rules and custom preset example |
-| `skills/markdown-guide/templates/` | Generic and project skeletons |
-| `skills/markdown-guide/examples/` | Complete example documents |
-| `skills/markdown-guide/scripts/list-presets.mjs` | Preset list and search script shipped with the skill |
-| `.changeset/` | Changesets configuration and pending changesets |
-| `.opencode/commands/presets.md` | `/presets` command to list and search presets |
-| `.opencode/commands/create-template.md` | `/create-template` command to create a custom template |
-| `.opencode/commands/update-skill.md` | `/update-markdown-guide` command to update the installed skill |
-| `scripts/sync-skill-version.mjs` | Development script that syncs the package version |
-| `tests/` | Tests for the skill scripts |
-| `CHANGELOG.md` | Skill version history |
-
-## Core rules
-
-- Metadata is a compact two-row table.
-- Every document opens with a short abstract of at most 30 words.
-- Every H2 has an explicit `s-<slug>` anchor.
-- Every section links back to the top and to the parent or index.
-- Change history is reverse-chronological and versioned with semver.
-- Citable items use semantic IDs defined by the selected preset.
-- Automatic numbered lists and checkboxes are forbidden.
-- Exceptions are recorded in `## Constraints` with date, requester, and scope.
-- `## Constraints` is always present, even when empty.
-- Closed items are struck through and kept in the document.
-
-## Presets and customization
+## Presets
 
 Built-in presets:
 
@@ -161,6 +159,7 @@ Built-in presets:
 | `technical-design` | Technical design with architecture, components, interfaces, risks, and rollout. |
 | `prd` | Product problem, goals, requirements, and metrics. |
 | `code-review` | Pull request or diff review with verdict, findings, tests, and actions. |
+| `review-followup` | Track review comments through triage, decision, fix, verification, and closure. |
 | `acceptance-criteria` | Testable CDA as Gherkin scenarios with traceability and tests. |
 | `test-plan` | Strategy, environments, test cases, criteria, risks, and results. |
 | `glossary` | Stable terms, definitions, aliases, and references. |
@@ -190,13 +189,36 @@ User customizations:
 
 Precedence on conflict: mandatory core, explicit user instruction, template, custom rules, presets, skill defaults. Every deviation from the core is recorded in the generated document.
 
+## Flows
+
+Flows chain presets and templates into a delivery path. Start with [`flows/README.md`](./flows/README.md) and the example [`project-to-delivery.md`](./flows/project-to-delivery.md).
+
+The example goes from project to technical design, acceptance criteria, test plan, code review, review follow-up, release notes, and changelog.
+
+`Project → Technical design → Acceptance criteria → Test plan → Code review → Review follow-up → Release notes → Changelog`
+
+Optional branches: RFC before design, ADR for decisions, incident and post-mortem after release.
+
 ## Templates and examples
 
-Use `skills/markdown-guide/templates/document.md` as the generic skeleton, `skills/markdown-guide/templates/code-review.md` for a review, `skills/markdown-guide/templates/acceptance-criteria.md` for Gherkin acceptance criteria, and `skills/markdown-guide/templates/{test-plan,risk-register,technical-design,development-plan,topic-index}.md` for planning and indexing. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `skills/markdown-guide/examples/` contains complete, reusable references.
+Use `skills/markdown-guide/templates/document.md` as the generic skeleton, `skills/markdown-guide/templates/code-review.md` for a review, `skills/markdown-guide/templates/review-followup.md` for review follow-up, `skills/markdown-guide/templates/acceptance-criteria.md` for Gherkin acceptance criteria, and `skills/markdown-guide/templates/{test-plan,risk-register,technical-design,development-plan,topic-index,release-notes,changelog}.md` for planning, indexing, and release documentation. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `skills/markdown-guide/examples/` contains complete, reusable references.
 
 To create a custom template, use `/create-template <directory> <purpose>`. The command reads the built-in templates and presets, asks for missing details, and writes a reusable template with the same structure and placeholders.
 
 Before creating a document, the skill determines the template. If it cannot infer one from the request, the target directory, or an existing file, it asks the user which template to use instead of choosing silently.
+
+## Core rules
+
+- Metadata is a compact two-row table.
+- Every document opens with a short abstract of at most 30 words.
+- Every H2 has an explicit `s-<slug>` anchor.
+- Every section links back to the top and to the parent or index.
+- Change history is reverse-chronological and versioned with semver.
+- Citable items use semantic IDs defined by the selected preset.
+- Automatic numbered lists and checkboxes are forbidden.
+- Exceptions are recorded in `## Constraints` with date, requester, and scope.
+- `## Constraints` is always present, even when empty.
+- Closed items are struck through and kept in the document.
 
 ## Versioning
 
@@ -214,11 +236,43 @@ Commit the generated changeset files. Do not edit `CHANGELOG.md` or the version 
 
 Only `skills/markdown-guide/` is installed. Tests, Changesets, package metadata, and the version sync script stay at the repository root. This keeps the installed skill small and avoids downloading development tooling.
 
+`SKILL.md` keeps only the mandatory summary. Detailed rules live in `references/` and are read only when needed.
+
+## Contributing
+
+Read [`CONTRIBUTING.md`](./CONTRIBUTING.md) for setup, preset and template contributions, changesets, and release steps.
+
+Use [`.github/pull_request_template.md`](./.github/pull_request_template.md) when opening a pull request. Run `npm test` and include a changeset.
+
+## Repository layout
+
+| Path | Purpose |
+| --- | --- |
+| `skills/markdown-guide/SKILL.md` | Skill entry point and mandatory rules |
+| `skills/markdown-guide/references/` | Detailed rules, style, and extension guide |
+| `skills/markdown-guide/presets/` | Preset registry and built-in presets |
+| `skills/markdown-guide/custom/` | User rules and custom preset example |
+| `skills/markdown-guide/templates/` | Generic and project skeletons |
+| `skills/markdown-guide/examples/` | Complete example documents |
+| `skills/markdown-guide/scripts/list-presets.mjs` | Preset list and search script shipped with the skill |
+| `.changeset/` | Changesets configuration and pending changesets |
+| `.opencode/commands/markdown-guide-help.md` | `/markdown-guide-help` command |
+| `.opencode/commands/presets.md` | `/presets` command to list and search presets |
+| `.opencode/commands/create-template.md` | `/create-template` command to create a custom template |
+| `.opencode/commands/update-skill.md` | `/update-markdown-guide` command to update the installed skill |
+| `flows/` | Reusable delivery flows and the project-to-delivery example |
+| `.github/pull_request_template.md` | Pull request template |
+| `scripts/list-presets.mjs` | Root wrapper for the preset list/search script |
+| `scripts/sync-skill-version.mjs` | Development script that syncs the package version |
+| `tests/` | Tests for the skill scripts |
+| `CONTRIBUTING.md` | Contribution guide |
+| `CHANGELOG.md` | Skill version history |
+
 ## Repository notes
 
 - The skill is written in English.
 - `skills/markdown-guide/SKILL.md` is the agent entry point; `skills/markdown-guide/references/` contains the detailed rules.
-- Service files (`skills/markdown-guide/SKILL.md`, `skills/markdown-guide/references/`, `skills/markdown-guide/presets/`, `skills/markdown-guide/custom/`, `skills/markdown-guide/templates/`, `skills/markdown-guide/scripts/`, `.changeset/`, `.opencode/commands/`, `scripts/`, `tests/`, `package.json`, `package-lock.json`, `README.md`, `CHANGELOG.md`) are exempt from the document rules.
+- Service files (`skills/markdown-guide/SKILL.md`, `skills/markdown-guide/references/`, `skills/markdown-guide/presets/`, `skills/markdown-guide/custom/`, `skills/markdown-guide/templates/`, `skills/markdown-guide/scripts/`, `.changeset/`, `.opencode/commands/`, `.github/`, `flows/`, `scripts/`, `tests/`, `package.json`, `package-lock.json`, `README.md`, `CONTRIBUTING.md`, `CHANGELOG.md`) are exempt from the document rules.
 - `skills/markdown-guide/examples/` contains complete documents that follow the rules.
 - `markdown-guide-skills/` is a legacy nested repository and is ignored by `.gitignore`.
 - Commit and push are performed by the repository owner because the OpenCode configuration denies `git commit` and `git push` to the agent.

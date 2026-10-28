@@ -15,6 +15,9 @@ import { fileURLToPath } from "node:url";
 const script = fileURLToPath(
   new URL("../skills/markdown-guide/scripts/list-presets.mjs", import.meta.url)
 );
+const wrapper = fileURLToPath(
+  new URL("../scripts/list-presets.mjs", import.meta.url)
+);
 
 function run(...args) {
   return spawnSync(process.execPath, [script, ...args], { encoding: "utf8" });
@@ -31,6 +34,7 @@ test("lists all presets", () => {
   assert.match(result.stdout, /\| todo-list \| active \|/);
   assert.match(result.stdout, /\| glossary \| active \|/);
   assert.match(result.stdout, /\| code-review \| active \|/);
+  assert.match(result.stdout, /\| review-followup \| active \|/);
   assert.match(result.stdout, /\| acceptance-criteria \| active \|/);
   assert.match(result.stdout, /\| test-plan \| active \|/);
   assert.match(result.stdout, /\| risk-register \| active \|/);
@@ -65,6 +69,15 @@ test("searches planning presets", () => {
   assert.match(testPlan.stdout, /\| test-plan \| active \|/);
 });
 
+test("root wrapper works from the repository root", () => {
+  const result = spawnSync(process.execPath, [wrapper, "adr"], {
+    encoding: "utf8",
+  });
+
+  assert.equal(result.status, 0);
+  assert.match(result.stdout, /\| adr \| active \|/);
+});
+
 test("searches acceptance criteria by the CDA alias", () => {
   const result = run("cda");
 
@@ -77,6 +90,7 @@ test("searches review presets", () => {
 
   assert.equal(result.status, 0);
   assert.match(result.stdout, /\| code-review \| active \|/);
+  assert.match(result.stdout, /\| review-followup \| active \|/);
   assert.match(result.stdout, /\| post-mortem \| active \|/);
 });
 
