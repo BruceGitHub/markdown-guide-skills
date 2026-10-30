@@ -199,6 +199,8 @@ The example goes from project to technical design, acceptance criteria, test pla
 
 Optional branches: RFC before design, ADR for decisions, incident and post-mortem after release.
 
+Flows are usage docs for people and agents, not templates or generated documents: plain headings, no semantic IDs, anchors, or history tables. The diagram is plain text, so it renders on GitHub mobile as well as on desktop.
+
 ## Templates and examples
 
 Use `skills/markdown-guide/templates/document.md` as the generic skeleton, `skills/markdown-guide/templates/code-review.md` for a review, `skills/markdown-guide/templates/review-followup.md` for review follow-up, `skills/markdown-guide/templates/acceptance-criteria.md` for Gherkin acceptance criteria, and `skills/markdown-guide/templates/{test-plan,risk-register,technical-design,development-plan,topic-index,release-notes,changelog}.md` for planning, indexing, and release documentation. Each preset also contains its own mandatory structure block, which can be used as the template for that document type. `skills/markdown-guide/examples/` contains complete, reusable references.
