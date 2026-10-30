@@ -2,7 +2,7 @@
 name: markdown-guide
 description: Create or update Markdown documents with an abstract, anchors and navigation, reverse-chronological change history, semantic lists (DP/DA/DF), and extensible rules via presets, templates, and custom rules. Use when writing, reviewing, or updating a .md file.
 metadata:
-  version: "1.10.0"
+  version: "2.0.0"
   opencode/autoinvoke: false
 disable-model-invocation: true
 ---

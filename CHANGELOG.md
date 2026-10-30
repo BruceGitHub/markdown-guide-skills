@@ -2,6 +2,16 @@
 
 Changes to the skill, newest first.
 
+## 2.0.0
+
+### Major Changes
+
+- a10f751: Lighten the document format: metadata columns appear only when known, `## Constraints` appears only when there is an exception, and list items omit unknown owner and due date. Add the spec-to-tasks bundle flow and a guide for structuring free-form documents.
+
+### Patch Changes
+
+- 170a57d: Rewrite the flow docs as plain usage docs, with text diagrams that render on mobile.
+
 ## 1.10.0
 
 ### Minor Changes
