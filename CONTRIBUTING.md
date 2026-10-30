@@ -26,6 +26,7 @@ npm test
 | `scripts/` | Development scripts, including the root preset wrapper |
 | `.changeset/` | Changesets configuration and pending changesets |
 | `.opencode/commands/` | OpenCode commands |
+| `flows/` | Usage docs: delivery flows and guides |
 | `README.md` | User documentation |
 | `CHANGELOG.md` | Release history |
 
@@ -56,6 +57,16 @@ npm test
 - Follow the structure of the existing templates: compact metadata, abstract, index, legend, sections, constraints, history, anchors, and navigation.
 - Use placeholders such as `{{TITLE}}`, `{{OWNER}}`, `{{YYYY-MM-DD}}`, and `{{LINK_PARENT}}`.
 - Update the README and add a changeset.
+
+## Adding a flow
+
+A flow is usage documentation, not part of the installed skill. It lives in `flows/` and shows how to chain presets and templates.
+
+1. Copy the closest flow in `flows/`.
+2. Keep the sections: Flow, Stages, Optional branches, References, How to use; add Bundle when the flow produces several documents in one session.
+3. Use plain language, no semantic IDs or anchors, and a text diagram that renders on GitHub mobile.
+4. Add a row to the table in `flows/README.md`.
+5. Add a changeset.
 
 ## Adding a command
 

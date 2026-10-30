@@ -1,6 +1,6 @@
 ---
 id: bug-report
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [bug, bug report, defect]
 requires: []
@@ -19,9 +19,9 @@ Report one reproducible defect with environment, expected and actual behavior, i
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/bug-report.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -45,7 +45,6 @@ Report one reproducible defect with environment, expected and actual behavior, i
 - [Impact](#s-impact)
 - [Workaround](#s-workaround)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -64,7 +63,6 @@ Report one reproducible defect with environment, expected and actual behavior, i
 | IMP | Impact | Impact |
 | WRK | Workaround | Workaround |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -145,13 +143,6 @@ Report one reproducible defect with environment, expected and actual behavior, i
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

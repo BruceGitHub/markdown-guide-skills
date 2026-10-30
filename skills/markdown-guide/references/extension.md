@@ -23,7 +23,7 @@ On conflict, the higher level wins:
 - **L5 — Presets.**
 - **L6 — Skill defaults.**
 
-Every exception to the core must be recorded in `## Constraints` with date, requester, and scope. A preset or custom rule cannot remove the abstract, anchors, navigation, history, semantic lists, or constraints.
+Every exception to the core must be recorded in `## Constraints` with date, requester, and scope. A preset or custom rule cannot remove the abstract, anchors, navigation, history, or semantic lists, and cannot cancel the constraints requirement when an exception exists.
 
 ## Presets
 
@@ -64,7 +64,7 @@ Rules:
 - **EP2 — Write rules with `PR#` IDs or with a preset prefix (`MR#` for meeting notes).**
 - **EP3 — Add the row to the table in `presets/index.md`.**
 - **EP4 — Add a changeset in the skill repository with `npm run changeset`.**
-- **EP5 — Verify with a test document: abstract, anchors, index, legend, constraints, history.**
+- **EP5 — Verify with a test document: abstract, anchors, index, legend, history, and constraints when needed.**
 
 ### Disable a preset
 

@@ -1,6 +1,6 @@
 ---
 id: todo-list
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [todo, todo list, tasks, task list]
 requires: []
@@ -19,9 +19,9 @@ Track open tasks with owner, priority, and due date, and keep completed tasks fo
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/todo-list.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -38,7 +38,6 @@ Track open tasks with owner, priority, and due date, and keep completed tasks fo
 - [Scope](#s-scope)
 - [Tasks](#s-tasks)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -50,7 +49,6 @@ Track open tasks with owner, priority, and due date, and keep completed tasks fo
 | --- | --- | --- |
 | TD | Task | Tasks |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -92,13 +90,6 @@ Track open tasks with owner, priority, and due date, and keep completed tasks fo
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
 <a id="s-change-history"></a>
 ## Change history
 
@@ -117,7 +108,7 @@ TL1 — One task per item. Tasks are `TD#` and keep stable IDs.
 
 TL2 — Use only these statuses: `to do`, `in progress`, `blocked`, `done`.
 
-TL3 — Every task has `Priority` (`high`, `medium`, `low`), `Owner`, and `Due date`.
+TL3 — Every task has a `Status`. `Priority` (`high`, `medium`, `low`), `Owner`, and `Due date` appear when known; a task without them stays open.
 
 TL4 — Completed or cancelled tasks go under `### Done`, after `---`, struck through with the completion date and an optional reference.
 

@@ -1,6 +1,6 @@
 ---
 id: meeting-notes
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [meeting, minutes]
 requires: []
@@ -19,9 +19,9 @@ Record decisions and actions from a meeting. Meeting notes are not a transcript.
 
 # Meeting notes — {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{NOTE_TAKER}} | presets/meeting-notes.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -41,7 +41,6 @@ Record decisions and actions from a meeting. Meeting notes are not a transcript.
 - [Decisions made](#s-decisions-made)
 - [Open decisions](#s-open-decisions)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -55,7 +54,6 @@ Record decisions and actions from a meeting. Meeting notes are not a transcript.
 | DA | Open decision | Open decisions |
 | DF | To do | Open decisions, To do |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -116,13 +114,6 @@ Record decisions and actions from a meeting. Meeting notes are not a transcript.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
 <a id="s-change-history"></a>
 ## Change history
 
@@ -141,7 +132,7 @@ MR1 — Record only decisions, actions, and relevant points. Do not transcribe t
 
 MR2 — A decision made during the meeting is a DP. A deferred decision is a DA. An activity is a DF.
 
-MR3 — Every DA and DF has an `Owner` and a `Due date`. If they are missing, the item remains open and the notes record it in `## Constraints`.
+MR3 — Every DA and DF has an `Owner` and a `Due date` when known. If they are missing, the item remains open.
 
 MR4 — DAs and DFs are separated by `---` and the `### To do` subsection.
 

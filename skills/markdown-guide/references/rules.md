@@ -4,11 +4,11 @@ Mandatory rules for every document produced or updated with the skill. A documen
 
 ## Metadata
 
-The metadata is a compact two-row table placed after the H1. Required columns are `Version`, `Date`, and `Status`. Add `Owner`, `Template`, and `Parent` only when they have a value. Do not use a vertical `Field | Value` table.
+The metadata is a compact two-row table placed after the H1. Required columns are `Version`, `Date`, and `Status`. Add `Owner`, `Template`, and `Parent` only when they have a value: omit the column instead of leaving it empty. Do not use a vertical `Field | Value` table.
 
-| Version | Date | Status | Owner |
-| --- | --- | --- | --- |
-| 1.2.0 | 2026-10-21 | active | Platform Team |
+| Version | Date | Status |
+| --- | --- | --- |
+| 1.2.0 | 2026-10-21 | active |
 
 Field reference:
 
@@ -17,9 +17,9 @@ Field reference:
 | Version | yes | semver, for example `1.2.0` |
 | Date | yes | ISO 8601, for example `2026-10-21` |
 | Status | yes | `draft`, `active`, `archived` |
-| Owner | no | responsible person or team |
-| Template | no | path of the applied template, or `—` |
-| Parent | no | link to the parent document, or `—` |
+| Owner | no | responsible person or team; omit when unknown |
+| Template | no | path of the applied template; omit when unknown |
+| Parent | no | link to the parent document; omit when unknown |
 
 If the template uses YAML frontmatter, keep it and map the same fields. Do not duplicate the same data in frontmatter and table.
 
@@ -215,9 +215,7 @@ Versioning:
 
 ## Constraints
 
-`## Constraints` is always present, even without exceptions.
-
-It contains:
+`## Constraints` is optional. Add it only when there is something to record:
 
 - Exceptions requested by the user.
 - Conflicts with a template or directory.
@@ -231,11 +229,7 @@ Format:
 - <a id="v1"></a>**V1 — On-premise OIDC provider.** Authentication data does not leave the corporate network. Source: security requirement.
 ```
 
-If there are no constraints:
-
-```markdown
-No constraints.
-```
+If there is nothing to record, omit the section and its index entry. Do not add an empty `## Constraints` or a `No constraints.` placeholder.
 
 Do not use `## Constraints` for generic notes or to repeat rules already followed.
 
@@ -269,10 +263,10 @@ Before creating a document or a template:
 - **TP4 — Keep template sections that are compatible with the core rules.**
 - **TP5 — Add missing mandatory sections in the correct position.**
 - **TP6 — Fill every placeholder. Do not leave `{{...}}`, `TODO`, or example text.**
-- **TP7 — Record `Template` in the metadata and every conflict in `## Constraints`.**
+- **TP7 — Record `Template` in the metadata when known, and every conflict in `## Constraints`.**
 - **TP8 — If the directory has an index, add the new document link.**
 
-Templates cannot remove the abstract, anchors, navigation, history, semantic lists, or constraints. On conflict, the core rule wins; the exception must be recorded.
+Templates cannot remove the abstract, anchors, navigation, history, or semantic lists. On conflict, the core rule wins; the exception must be recorded.
 
 If the file name is not specified, use kebab-case derived from the title. If no template is specified or inferable, ask the user before proceeding; do not impose one. Use `templates/` only after the user chooses or confirms a built-in template.
 
@@ -305,7 +299,7 @@ A document is ready only if every answer is yes:
 - No automatic numbered lists exist.
 - Every citable item has a semantic ID.
 - The legend covers every prefix used.
-- `## Constraints` is present.
+- Constraints appears only when there are exceptions, and every exception has a date, requester, and scope.
 - Exceptions have a date, requester, and scope.
 - History is reverse-chronological and the version matches the first row.
 - Project documents have DP, DA, DF, the `---` separator, references as links, and closed items struck through.

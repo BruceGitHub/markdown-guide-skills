@@ -1,6 +1,6 @@
 ---
 id: incident
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [incident, outage, sev, incident report]
 requires: []
@@ -19,9 +19,9 @@ Track an active or recently resolved incident: severity, impact, timeline, mitig
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/incident.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -45,7 +45,6 @@ Track an active or recently resolved incident: severity, impact, timeline, mitig
 - [Actions](#s-actions)
 - [Communication](#s-communication)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -64,7 +63,6 @@ Track an active or recently resolved incident: severity, impact, timeline, mitig
 | DF | To do | Actions |
 | COM | Communication | Communication |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -151,13 +149,6 @@ Track an active or recently resolved incident: severity, impact, timeline, mitig
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
 <a id="s-change-history"></a>
 ## Change history
 
@@ -184,7 +175,7 @@ IN5 — Mitigations are `MIT#` and include owner and status.
 
 IN6 — Preliminary cause is `RC1` and describes systems and conditions, not people.
 
-IN7 — Actions are `DF#` and include `Status`, `Owner`, and `Due date`.
+IN7 — Actions are `DF#` and include `Status`; `Owner` and `Due date` appear when known.
 
 IN8 — Communication items are `COM#` and include audience, channel, and time.
 

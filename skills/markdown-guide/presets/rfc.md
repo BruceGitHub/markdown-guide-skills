@@ -1,6 +1,6 @@
 ---
 id: rfc
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [rfc, proposal, design proposal]
 requires: []
@@ -19,9 +19,9 @@ Propose a design, collect open questions, and record the decisions that close th
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/rfc.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -44,7 +44,6 @@ Propose a design, collect open questions, and record the decisions that close th
 - [Open questions](#s-open-questions)
 - [Decisions](#s-decisions)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -60,7 +59,6 @@ Propose a design, collect open questions, and record the decisions that close th
 | DA | Open decision | Open questions |
 | DP | Decision made | Decisions |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -141,13 +139,6 @@ RFC status: {{draft | accepted | rejected}}.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
 <a id="s-change-history"></a>
 ## Change history
 
@@ -166,11 +157,11 @@ RFC1 — Use this preset for a proposal that is not yet a final decision. Use `a
 
 RFC2 — Requirements are `RQ#`; alternatives are `ALT#`; drawbacks are `DW#`.
 
-RFC3 — Open questions are `DA#` and include `Owner` and `Due date`. Do not add `Status: open`; the section already defines the state.
+RFC3 — Open questions are `DA#` and include `Owner` and `Due date` when known. Do not add `Status: open`; the section already defines the state.
 
 RFC4 — Decisions are `DP#` and include a date. A decision that closes a DA links to it with `Source: [DA1](#da1).`
 
-RFC5 — Actions are `DF#`, separated from DAs by `---` and `### To do`. They include `Status`, `Owner`, and `Due date`.
+RFC5 — Actions are `DF#`, separated from DAs by `---` and `### To do`. They include `Status`; `Owner` and `Due date` appear when known.
 
 RFC6 — Record the RFC status (`draft`, `accepted`, `rejected`) in `## Summary`.
 

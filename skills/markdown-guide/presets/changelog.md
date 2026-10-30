@@ -1,6 +1,6 @@
 ---
 id: changelog
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [changelog, release history, version history]
 requires: []
@@ -21,9 +21,9 @@ The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/
 
 # Changelog
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| {{CURRENT_VERSION}} | {{YYYY-MM-DD}} | active | {{OWNER}} | presets/changelog.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| {{CURRENT_VERSION}} | {{YYYY-MM-DD}} | active |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -40,7 +40,6 @@ All notable changes to this project are documented in this file. The format is b
 - [Unreleased](#s-unreleased)
 - [1.0.0](#s-1-0-0)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -52,7 +51,6 @@ All notable changes to this project are documented in this file. The format is b
 | --- | --- | --- |
 | CL | Changelog entry | Unreleased, releases |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -87,13 +85,6 @@ All notable changes to this project are documented in this file. The format is b
 
 - <a id="rf1"></a>**RF1 — Unreleased compare.** [compare/v1.0.0...HEAD]({{compare_url}})
 - <a id="rf2"></a>**RF2 — 1.0.0 release.** [releases/tag/v1.0.0]({{release_url}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

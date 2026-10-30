@@ -1,6 +1,6 @@
 ---
 id: acceptance-criteria
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [cda, criteri di accettazione, acceptance criteria, gherkin, bdd]
 requires: []
@@ -19,9 +19,9 @@ Define testable acceptance criteria as Gherkin scenarios, with traceability to t
 
 # Acceptance criteria — {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/acceptance-criteria.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -40,7 +40,6 @@ Define testable acceptance criteria as Gherkin scenarios, with traceability to t
 - [Scenarios](#s-scenarios)
 - [Traceability](#s-traceability)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -55,7 +54,6 @@ Define testable acceptance criteria as Gherkin scenarios, with traceability to t
 | AC | Acceptance criterion | Scenarios |
 | TC | Test case | Traceability |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -101,13 +99,6 @@ Define testable acceptance criteria as Gherkin scenarios, with traceability to t
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

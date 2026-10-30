@@ -4,9 +4,9 @@
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| {{RELEASE_VERSION}} | {{YYYY-MM-DD}} | active | {{OWNER}} | templates/release-notes.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| {{RELEASE_VERSION}} | {{YYYY-MM-DD}} | active |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -26,7 +26,6 @@
 - [Fixes](#s-fixes)
 - [Upgrade notes](#s-upgrade-notes)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -42,7 +41,6 @@
 | FX | Fix | Fixes |
 | UP | Upgrade action | Upgrade notes |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -89,13 +87,6 @@
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

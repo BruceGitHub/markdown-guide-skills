@@ -5,11 +5,19 @@ Reusable flows that chain presets and templates from planning to release. Flows 
 | Flow | Use |
 | --- | --- |
 | [project-to-delivery.md](./project-to-delivery.md) | From project decisions to release notes and changelog. |
+| [spec-to-tasks.md](./spec-to-tasks.md) | From a model or brief to a spec, a development plan, and a task list. |
+
+## Guides
+
+| Guide | Use |
+| --- | --- |
+| [structure-unstructured.md](./structure-unstructured.md) | Turn a free-form document into a structured one. |
 
 ## How to add a flow
 
 - Copy the closest existing flow.
 - Keep the same sections: Flow, Stages, Optional branches, References, How to use.
+- Add a Bundle section when the flow produces several documents in one session.
 - Link presets and templates instead of repeating their content.
 - Describe each stage in plain language: what it produces and when it is ready.
 - Add a row to the flow table.

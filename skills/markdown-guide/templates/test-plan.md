@@ -4,9 +4,9 @@
 
 # Test plan — {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | templates/test-plan.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -28,7 +28,6 @@
 - [Risks](#s-risks)
 - [Results](#s-results)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -46,7 +45,6 @@
 | RS | Risk | Risks |
 | TR | Test run | Results |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -125,13 +123,6 @@
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

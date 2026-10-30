@@ -1,6 +1,6 @@
 ---
 id: glossary
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [glossary, terminology, terms, dictionary]
 requires: []
@@ -19,9 +19,9 @@ Define the terms used by a project, product, or team in one stable, searchable l
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/glossary.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -38,7 +38,6 @@ Define the terms used by a project, product, or team in one stable, searchable l
 - [Scope](#s-scope)
 - [Terms](#s-terms)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -50,7 +49,6 @@ Define the terms used by a project, product, or team in one stable, searchable l
 | --- | --- | --- |
 | TR | Term | Terms |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -79,13 +77,6 @@ Terms are sorted alphabetically. IDs remain stable.
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

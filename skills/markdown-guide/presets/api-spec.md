@@ -1,6 +1,6 @@
 ---
 id: api-spec
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [api, api spec, endpoint, contract]
 requires: []
@@ -19,9 +19,9 @@ Document an API contract: authentication, endpoints, schemas, errors, examples, 
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/api-spec.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -43,7 +43,6 @@ Document an API contract: authentication, endpoints, schemas, errors, examples, 
 - [Examples](#s-examples)
 - [Rate limits](#s-rate-limits)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -59,7 +58,6 @@ Document an API contract: authentication, endpoints, schemas, errors, examples, 
 | EX | Example | Examples |
 | RL | Rate limit | Rate limits |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -132,13 +130,6 @@ Base URL: `{{base_url}}`. API version: `{{version}}`.
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

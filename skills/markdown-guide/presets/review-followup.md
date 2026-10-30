@@ -1,6 +1,6 @@
 ---
 id: review-followup
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [review followup, followup review, review resolution, pr comments, merge request comments, code review follow-up]
 requires: []
@@ -19,9 +19,9 @@ Track review comments and questions from a pull request, merge request, or agent
 
 # Review follow-up — {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/review-followup.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -39,7 +39,6 @@ Track review comments and questions from a pull request, merge request, or agent
 - [Progress](#s-progress)
 - [Review items](#s-review-items)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -53,7 +52,6 @@ Track review comments and questions from a pull request, merge request, or agent
 | PG | Progress summary | Progress |
 | RV | Review item | Review items |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -111,13 +109,6 @@ Track review comments and questions from a pull request, merge request, or agent
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

@@ -1,6 +1,6 @@
 ---
 id: checklist
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [checklist, verification, operations]
 requires: []
@@ -19,9 +19,9 @@ Track a repeatable set of checks with owners, expected results, and exceptions.
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/checklist.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -40,7 +40,6 @@ Track a repeatable set of checks with owners, expected results, and exceptions.
 - [Checklist](#s-checklist)
 - [Exceptions](#s-exceptions)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -54,7 +53,6 @@ Track a repeatable set of checks with owners, expected results, and exceptions.
 | CK | Check | Checklist |
 | EX | Exception | Exceptions |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -98,13 +96,6 @@ Track a repeatable set of checks with owners, expected results, and exceptions.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
 <a id="s-change-history"></a>
 ## Change history
 
@@ -119,7 +110,7 @@ If `Parent` is not set, replace `{{LINK_PARENT}}` with `#s-index` in every navig
 
 ## Rules
 
-CL1 — One check per item. Checks are `CK#` and include `Status`, `Owner`, and `Expected`.
+CL1 — One check per item. Checks are `CK#` and include `Status`; `Owner` appears when known, plus `Expected`.
 
 CL2 — Use `Status: to do`, `Status: in progress`, `Status: blocked`, or `Status: done`. Do not use checkboxes.
 

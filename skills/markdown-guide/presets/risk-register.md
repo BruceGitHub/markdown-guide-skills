@@ -1,6 +1,6 @@
 ---
 id: risk-register
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [risk register, risk log, risk management]
 requires: []
@@ -19,9 +19,9 @@ Track project and operational risks with likelihood, impact, owner, mitigation, 
 
 # Risk register — {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/risk-register.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -41,7 +41,6 @@ Track project and operational risks with likelihood, impact, owner, mitigation, 
 - [Decisions](#s-decisions)
 - [Actions](#s-actions)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -57,7 +56,6 @@ Track project and operational risks with likelihood, impact, owner, mitigation, 
 | DP | Decision made | Decisions |
 | DF | To do | Actions |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -120,13 +118,6 @@ No actions.
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

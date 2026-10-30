@@ -1,6 +1,6 @@
 ---
 id: post-mortem
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [post-mortem, incident review, outage review]
 requires: []
@@ -19,9 +19,9 @@ Review an incident without blame, identify causes, and track corrective actions.
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/post-mortem.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -44,7 +44,6 @@ Review an incident without blame, identify causes, and track corrective actions.
 - [Residual risks](#s-residual-risks)
 - [Lessons](#s-lessons)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -61,7 +60,6 @@ Review an incident without blame, identify causes, and track corrective actions.
 | DF | To do | Actions |
 | RS | Risk | Actions |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -136,13 +134,6 @@ Review an incident without blame, identify causes, and track corrective actions.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
 <a id="s-change-history"></a>
 ## Change history
 
@@ -163,7 +154,7 @@ PM2 — Timeline events are `EV#` and include an ISO timestamp with time.
 
 PM3 — The root cause is `RC1` and states a systemic cause. Contributing factors are `CF#`.
 
-PM4 — Actions are `DF#` and include `Status`, `Owner`, `Due date`, and a link to the root cause or contributing factor they address.
+PM4 — Actions are `DF#` and include `Status`; `Owner` and `Due date` appear when known, plus a link to the root cause or contributing factor they address.
 
 PM5 — Residual risks are `RS#` and include an owner or accepted rationale.
 

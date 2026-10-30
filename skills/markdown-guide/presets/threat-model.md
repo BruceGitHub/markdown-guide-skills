@@ -1,6 +1,6 @@
 ---
 id: threat-model
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [threat model, security, risk assessment]
 requires: []
@@ -19,9 +19,9 @@ Identify assets, trust boundaries, threats, mitigations, and residual risks.
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/threat-model.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -42,7 +42,6 @@ Identify assets, trust boundaries, threats, mitigations, and residual risks.
 - [Mitigations](#s-mitigations)
 - [Residual risks](#s-residual-risks)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -58,7 +57,6 @@ Identify assets, trust boundaries, threats, mitigations, and residual risks.
 | MI | Mitigation | Mitigations |
 | RS | Residual risk | Residual risks |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -116,13 +114,6 @@ Identify assets, trust boundaries, threats, mitigations, and residual risks.
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

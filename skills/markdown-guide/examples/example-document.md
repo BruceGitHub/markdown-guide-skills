@@ -2,9 +2,9 @@
 
 # Technical documentation guidelines
 
-| Version | Date | Status | Owner | Parent |
-| --- | --- | --- | --- | --- |
-| 1.1.0 | 2026-10-21 | active | Documentation | [Examples](./README.md#s-index) |
+| Version | Date | Status |
+| --- | --- | --- |
+| 1.1.0 | 2026-10-21 | active |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -22,7 +22,6 @@ Minimum conventions for writing technical documents that are clear, linked, and 
 - [Document structure](#s-document-structure)
 - [Mistakes to avoid](#s-mistakes-to-avoid)
 - [Legend](#s-legend)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top) · [← Back](./README.md#s-index)
@@ -66,13 +65,6 @@ A document with a long abstract, an incomplete index, or an unordered history is
 | Prefix | Meaning | Scope |
 | --- | --- | --- |
 | GL | Guideline | Conventions |
-
-[↑ Back to top](#top) · [← Back](./README.md#s-index)
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back](./README.md#s-index)
 

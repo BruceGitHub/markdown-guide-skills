@@ -1,6 +1,6 @@
 ---
 id: project
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [project, plan, specification, architecture, decision]
 requires: []
@@ -19,9 +19,9 @@ A document that makes decisions and tracks work: project, plan, specification, a
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/project.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -39,7 +39,6 @@ A document that makes decisions and tracks work: project, plan, specification, a
 - [Decisions made](#s-decisions-made)
 - [Open decisions](#s-open-decisions)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -53,7 +52,6 @@ A document that makes decisions and tracks work: project, plan, specification, a
 | DA | Open decision | Open decisions |
 | DF | To do | Open decisions, To do |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -98,13 +96,6 @@ A document that makes decisions and tracks work: project, plan, specification, a
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
 <a id="s-change-history"></a>
 ## Change history
 
@@ -123,11 +114,11 @@ PR1 — Keep the structure order. Project-specific sections go between `## Conte
 
 PR2 — `## Decisions made` contains only DP. Every DP has a title, text, date, and references when present.
 
-PR3 — `## Open decisions` contains DAs. Every DA has `Owner`, `Due date`, and `Ref.` when present. Do not add `Status: open`; the section already defines the state. If a DA is blocked, state the blocker in the text or add `Blocked by:`.
+PR3 — `## Open decisions` contains DAs. Every DA has `Owner` and `Due date` when known, and `Ref.` when present. Do not add `Status: open`; the section already defines the state. If a DA is blocked, state the blocker in the text or add `Blocked by:`.
 
 PR4 — Inside `## Open decisions`, separate DAs from DFs with a `---` line followed by `### To do`.
 
-PR5 — `### To do` contains only DF. Every DF has `Status`, `Owner`, `Due date`, and `Ref.` when present.
+PR5 — `### To do` contains only DF. Every DF has `Status`; `Owner` and `Due date` appear when known, and `Ref.` when present.
 
 PR6 — DP and DA references are Markdown links. Internal references point to `RF#` anchors; external references point to the document.
 

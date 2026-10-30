@@ -191,15 +191,26 @@ Precedence on conflict: mandatory core, explicit user instruction, template, cus
 
 ## Flows
 
-Flows chain presets and templates into a delivery path. Start with [`flows/README.md`](./flows/README.md) and the example [`project-to-delivery.md`](./flows/project-to-delivery.md).
+Flows chain presets and templates into a delivery path. Start with [`flows/README.md`](./flows/README.md).
 
-The example goes from project to technical design, acceptance criteria, test plan, code review, review follow-up, release notes, and changelog.
+| Flow | Path |
+| --- | --- |
+| Project to delivery | [`flows/project-to-delivery.md`](./flows/project-to-delivery.md) |
+| Spec to tasks | [`flows/spec-to-tasks.md`](./flows/spec-to-tasks.md) |
+
+Quick start:
+
+- Copy the flow into the project documentation.
+- Replace the links with the actual project documents.
+- Move to the next stage only when its "Ready when" condition is met.
 
 `Project → Technical design → Acceptance criteria → Test plan → Code review → Review follow-up → Release notes → Changelog`
 
 Optional branches: RFC before design, ADR for decisions, incident and post-mortem after release.
 
-Flows are usage docs for people and agents, not templates or generated documents: plain headings, no semantic IDs, anchors, or history tables. The diagram is plain text, so it renders on GitHub mobile as well as on desktop.
+`spec-to-tasks` is a bundle: one session produces a spec, a development plan, and a task list. [`flows/structure-unstructured.md`](./flows/structure-unstructured.md) shows how to turn free-form notes into a structured document.
+
+Flows are usage docs for people and agents, not templates or generated documents: plain headings, no semantic IDs, anchors, or history tables. Diagrams are plain text, so they render on GitHub mobile as well as on desktop.
 
 ## Templates and examples
 
@@ -211,7 +222,7 @@ Before creating a document, the skill determines the template. If it cannot infe
 
 ## Core rules
 
-- Metadata is a compact two-row table.
+- Metadata is a compact two-row table; `Owner`, `Template`, and `Parent` appear only when known.
 - Every document opens with a short abstract of at most 30 words.
 - Every H2 has an explicit `s-<slug>` anchor.
 - Every section links back to the top and to the parent or index.
@@ -219,7 +230,7 @@ Before creating a document, the skill determines the template. If it cannot infe
 - Citable items use semantic IDs defined by the selected preset.
 - Automatic numbered lists and checkboxes are forbidden.
 - Exceptions are recorded in `## Constraints` with date, requester, and scope.
-- `## Constraints` is always present, even when empty.
+- `## Constraints` appears only when there is an exception to record.
 - Closed items are struck through and kept in the document.
 
 ## Versioning

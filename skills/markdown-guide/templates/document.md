@@ -4,9 +4,9 @@
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Parent |
-| --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -21,7 +21,6 @@
 - [Abstract](#s-abstract)
 - [Content](#s-content)
 - [Legend](#s-legend)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -39,13 +38,6 @@
 | Prefix | Meaning | Scope |
 | --- | --- | --- |
 | {{PREFIX}} | {{MEANING}} | {{SCOPE}} |
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

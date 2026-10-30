@@ -47,8 +47,10 @@ Writing rules for documents produced with the skill.
 ## Structure
 
 - Metadata as a compact two-row table.
+- Optional metadata fields appear only when known.
 - Abstract first.
 - Index after the abstract.
+- Sections appear when they have content; omit empty sections and their index entries.
 - Content from general to specific.
 - Decisions and actions before operational details.
 - History at the end.

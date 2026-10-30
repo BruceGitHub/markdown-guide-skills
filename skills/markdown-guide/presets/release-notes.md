@@ -1,6 +1,6 @@
 ---
 id: release-notes
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [release, release notes]
 requires: []
@@ -19,9 +19,9 @@ Describe a release: highlights, breaking changes, features, fixes, and upgrade a
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| {{RELEASE_VERSION}} | {{YYYY-MM-DD}} | active | {{OWNER}} | presets/release-notes.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| {{RELEASE_VERSION}} | {{YYYY-MM-DD}} | active |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -41,7 +41,6 @@ Describe a release: highlights, breaking changes, features, fixes, and upgrade a
 - [Fixes](#s-fixes)
 - [Upgrade notes](#s-upgrade-notes)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -57,7 +56,6 @@ Describe a release: highlights, breaking changes, features, fixes, and upgrade a
 | FX | Fix | Fixes |
 | UP | Upgrade action | Upgrade notes |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -104,13 +102,6 @@ Describe a release: highlights, breaking changes, features, fixes, and upgrade a
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

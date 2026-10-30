@@ -2,9 +2,9 @@
 
 # Examples
 
-| Version | Date | Status | Owner |
-| --- | --- | --- | --- |
-| 1.0.0 | 2026-10-21 | active | Markdown Guide |
+| Version | Date | Status |
+| --- | --- | --- |
+| 1.0.0 | 2026-10-21 | active |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -19,7 +19,6 @@ Example documents for the skill, ready to copy or adapt.
 - [Abstract](#s-abstract)
 - [Generic document](#s-generic-document)
 - [Project document](#s-project-document)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -38,13 +37,6 @@ Example documents for the skill, ready to copy or adapt.
 ## Project document
 
 The project document shows decisions made, open decisions, actions, references as links, closed items struck through, and history.
-
-[↑ Back to top](#top) · [← Back](#s-index)
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back](#s-index)
 

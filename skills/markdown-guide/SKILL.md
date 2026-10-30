@@ -37,9 +37,9 @@ G3 — **History.** `## Change history` last. Table `Version | Date | Author | C
 
 G4 — **Semantic lists.** No automatic numbered lists or unlabeled bullets for citable items. Use stable IDs and a legend. Exceptions go in `## Constraints`.
 
-G5 — **Metadata.** Compact two-row table: required `Version`, `Date`, `Status`; optional `Owner`, `Template`, `Parent`. Semver.
+G5 — **Metadata.** Compact two-row table: required `Version`, `Date`, `Status`; optional `Owner`, `Template`, `Parent`, omitted when unknown. Semver.
 
-G6 — **Constraints.** `## Constraints` always present. Write `No constraints.` when empty.
+G6 — **Constraints.** Add `## Constraints` only when there is an exception to record. Omit the section and its index entry when there is nothing to record.
 
 G7 — **Templates.** If a template or directory is specified, follow it. If the template cannot be inferred, ask which to use. Core rules win; record conflicts in `## Constraints`.
 
@@ -73,7 +73,6 @@ Text, at most 30 words.
 - [Abstract](#s-abstract)
 - [Content](#s-content)
 - [Legend](#s-legend)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -89,11 +88,6 @@ Text, at most 30 words.
 | Prefix | Meaning | Scope |
 | --- | --- | --- |
 | ... | ... | ... |
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 <a id="s-change-history"></a>
 ## Change history
@@ -115,7 +109,7 @@ P3 — Select the narrowest preset and active custom rules.
 
 P4 — Outline sections, anchors, and semantic prefixes.
 
-P5 — Write abstract, content, legend, references, and constraints.
+P5 — Write abstract, content, legend, references, and constraints when needed.
 
 P6 — Add the history row, version, and date.
 
@@ -161,7 +155,7 @@ C7 — Citable items have semantic IDs.
 
 C8 — Legend covers every prefix.
 
-C9 — Constraints present; exceptions recorded.
+C9 — Constraints appears only when exceptions exist; every exception is recorded.
 
 C10 — History reverse-chronological; version aligned.
 

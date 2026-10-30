@@ -3,7 +3,13 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
-const files = ['README.md', 'flows/README.md', 'flows/project-to-delivery.md'];
+const files = [
+  'README.md',
+  'flows/README.md',
+  'flows/project-to-delivery.md',
+  'flows/spec-to-tasks.md',
+  'flows/structure-unstructured.md',
+];
 
 test('local markdown links resolve', () => {
   const missing = [];

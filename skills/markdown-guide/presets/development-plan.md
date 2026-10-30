@@ -1,6 +1,6 @@
 ---
 id: development-plan
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [development plan, dev plan, implementation plan, delivery plan, tracking]
 requires: []
@@ -19,9 +19,9 @@ Track a development plan created with an agent: phases, open questions, decision
 
 # Development plan — {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/development-plan.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -43,7 +43,6 @@ Track a development plan created with an agent: phases, open questions, decision
 - [Tasks](#s-tasks)
 - [New items](#s-new-items)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -61,7 +60,6 @@ Track a development plan created with an agent: phases, open questions, decision
 | DF | Task | Tasks |
 | NI | New item | New items |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -159,13 +157,6 @@ Items discovered while planning. Triage them before adding them to the plan.
 ## References
 
 - <a id="rf1"></a>**RF1 — {{Title}}.** [{{text}}]({{link}})
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 

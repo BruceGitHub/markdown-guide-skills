@@ -2,9 +2,9 @@
 
 # OIDC authentication migration
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 1.2.0 | 2026-10-21 | active | Platform Team | [presets/project.md](../presets/project.md) | [Examples](./README.md#s-index) |
+| Version | Date | Status |
+| --- | --- | --- |
+| 1.2.0 | 2026-10-21 | active |
 
 <a id="s-abstract"></a>
 ## Abstract

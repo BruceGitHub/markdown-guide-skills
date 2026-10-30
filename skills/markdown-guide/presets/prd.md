@@ -1,6 +1,6 @@
 ---
 id: prd
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [prd, product requirements, requirements]
 requires: []
@@ -19,9 +19,9 @@ Define a product problem, its requirements, and the measures of success.
 
 # {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/prd.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -43,7 +43,6 @@ Define a product problem, its requirements, and the measures of success.
 - [Open questions](#s-open-questions)
 - [Decisions](#s-decisions)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -61,7 +60,6 @@ Define a product problem, its requirements, and the measures of success.
 | DA | Open decision | Open questions |
 | DP | Decision made | Decisions |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -139,13 +137,6 @@ Define a product problem, its requirements, and the measures of success.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
 <a id="s-change-history"></a>
 ## Change history
 
@@ -170,7 +161,7 @@ PRD4 — Requirements are `RQ#` and include priority (`must`, `should`, `could`)
 
 PRD5 — Metrics are `MT#` and include baseline, target, and window.
 
-PRD6 — Open questions are `DA#` and include `Owner` and `Due date`. Do not add `Status: open`.
+PRD6 — Open questions are `DA#` and include `Owner` and `Due date` when known. Do not add `Status: open`.
 
 PRD7 — Decisions are `DP#` and include a date. A decision that closes a DA links to it with `Source: [DA1](#da1).`
 

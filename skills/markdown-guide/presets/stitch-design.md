@@ -1,6 +1,6 @@
 ---
 id: stitch-design
-version: "1.0.0"
+version: "1.1.0"
 status: active
 applies-to: [design system, design.md, stitch, ui design]
 requires: []
@@ -73,9 +73,9 @@ components:
 
 # Design System: {{TITLE}}
 
-| Version | Date | Status | Owner | Template | Parent |
-| --- | --- | --- | --- | --- | --- |
-| 0.1.0 | {{YYYY-MM-DD}} | draft | {{OWNER}} | presets/stitch-design.md | {{LINK_PARENT}} |
+| Version | Date | Status |
+| --- | --- | --- |
+| 0.1.0 | {{YYYY-MM-DD}} | draft |
 
 <a id="s-abstract"></a>
 ## Abstract
@@ -98,7 +98,6 @@ components:
 - [Components](#s-components)
 - [Do's and Don'ts](#s-dos-and-donts)
 - [References](#s-references)
-- [Constraints](#s-constraints)
 - [Change history](#s-change-history)
 
 [↑ Back to top](#top)
@@ -117,7 +116,6 @@ components:
 | CP | Component | Components |
 | DD | Do / Don't | Do's and Don'ts |
 | RF | Reference | References |
-| V | Constraint | Constraints |
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
@@ -218,13 +216,6 @@ Components use the tokens above.
 - <a id="rf3"></a>**RF3 — Stitch documentation.** [stitch.withgoogle.com/docs](https://stitch.withgoogle.com/docs/)
 - <a id="rf4"></a>**RF4 — Stitch prompting guide.** [stitch.withgoogle.com/docs/learn/prompting](https://stitch.withgoogle.com/docs/learn/prompting/)
 - <a id="rf5"></a>**RF5 — WCAG 2.2.** [w3.org/TR/WCAG22](https://www.w3.org/TR/WCAG22/)
-
-[↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
-
-<a id="s-constraints"></a>
-## Constraints
-
-No constraints.
 
 [↑ Back to top](#top) · [← Back]({{LINK_PARENT}})
 
