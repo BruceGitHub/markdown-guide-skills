@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 660" width="880" height="660" role="img" aria-labelledby="title desc">
+  <title id="title">Live Markdown: the file carries its content and its rules</title>
+  <desc id="desc">A document.md file with its typical sections. Each section points to the function it performs and the rule it carries.</desc>
+
+  <defs>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .file { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.5; }
+      .section-label { font-size: 14px; font-weight: 500; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      .file-label { font-size: 12px; fill: #57606a; }
+      .col-label { font-size: 11px; fill: #8c959f; letter-spacing: 0.6px; }
+      .fn { font-size: 14px; font-weight: 600; }
+      .rule { font-size: 12px; fill: #57606a; }
+      .lorem { font-size: 11px; fill: #7d4e00; }
+      .arrow { stroke: #8c959f; stroke-width: 1.5; }
+      .head { fill: #8c959f; }
+    </style>
+  </defs>
+
+  <rect width="880" height="660" fill="#ffffff"/>
+
+  <text class="col-label" x="72" y="44">SECTION</text>
+  <text class="col-label" x="532" y="44">FUNCTION · RULE</text>
+
+  <rect class="file" x="48" y="64" width="320" height="560" rx="14"/>
+  <text class="mono file-label" x="72" y="90">document.md</text>
+  <line x1="48" y1="106" x2="368" y2="106" stroke="#eaeef2" stroke-width="1"/>
+
+  <rect x="72" y="120" width="272" height="38" rx="8" fill="#ddf4ff" stroke="#54aeff" stroke-width="1"/>
+  <text class="section-label" x="208" y="144" text-anchor="middle" fill="#0969da">Top anchor + H1</text>
+
+  <rect x="72" y="172" width="272" height="38" rx="8" fill="#fbefff" stroke="#c297ff" stroke-width="1"/>
+  <text class="section-label" x="208" y="196" text-anchor="middle" fill="#8250df">Metadata</text>
+
+  <rect x="72" y="224" width="272" height="38" rx="8" fill="#dafbe1" stroke="#4ac26b" stroke-width="1"/>
+  <text class="section-label" x="208" y="248" text-anchor="middle" fill="#1a7f37">Abstract</text>
+
+  <rect x="72" y="276" width="272" height="38" rx="8" fill="#e0f7f5" stroke="#39c5cf" stroke-width="1"/>
+  <text class="section-label" x="208" y="300" text-anchor="middle" fill="#0f6c75">Index + anchors</text>
+
+  <rect x="72" y="328" width="272" height="120" rx="8" fill="#fff8c5" stroke="#d4a72c" stroke-width="1"/>
+  <text class="section-label" x="88" y="350" fill="#7d4e00">Content</text>
+  <text class="lorem" x="88" y="372">Lorem ipsum dolor sit amet, consectetur</text>
+  <text class="lorem" x="88" y="388">adipiscing elit. Integer posuere erat a</text>
+  <text class="lorem" x="88" y="404">ante venenatis dapibus posuere velit</text>
+  <text class="lorem" x="88" y="420">aliquet. Cras mattis consectetur purus</text>
+  <text class="lorem" x="88" y="436">sit amet fermentum.</text>
+
+  <rect x="72" y="460" width="272" height="38" rx="8" fill="#fff1e5" stroke="#fb8f44" stroke-width="1"/>
+  <text class="section-label" x="208" y="484" text-anchor="middle" fill="#bc4c00">Legend</text>
+
+  <rect x="72" y="510" width="272" height="38" rx="8" fill="#ffebe9" stroke="#ff8182" stroke-width="1"/>
+  <text class="section-label" x="208" y="534" text-anchor="middle" fill="#cf222e">Constraints</text>
+
+  <rect x="72" y="560" width="272" height="38" rx="8" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text class="section-label" x="208" y="584" text-anchor="middle" fill="#57606a">Change history</text>
+
+  <line class="arrow" x1="344" y1="139" x2="508" y2="139"/>
+  <polygon class="head" points="508,135 516,139 508,143"/>
+
+  <line class="arrow" x1="344" y1="191" x2="508" y2="191"/>
+  <polygon class="head" points="508,187 516,191 508,195"/>
+
+  <line class="arrow" x1="344" y1="243" x2="508" y2="243"/>
+  <polygon class="head" points="508,239 516,243 508,247"/>
+
+  <line class="arrow" x1="344" y1="295" x2="508" y2="295"/>
+  <polygon class="head" points="508,291 516,295 508,299"/>
+
+  <line class="arrow" x1="344" y1="388" x2="508" y2="388"/>
+  <polygon class="head" points="508,384 516,388 508,392"/>
+
+  <line class="arrow" x1="344" y1="479" x2="508" y2="479"/>
+  <polygon class="head" points="508,475 516,479 508,483"/>
+
+  <line class="arrow" x1="344" y1="529" x2="508" y2="529"/>
+  <polygon class="head" points="508,525 516,529 508,533"/>
+
+  <line class="arrow" x1="344" y1="579" x2="508" y2="579"/>
+  <polygon class="head" points="508,575 516,579 508,583"/>
+
+  <text class="fn" x="532" y="135" fill="#0969da">entry</text>
+  <text class="rule" x="532" y="151">start reading</text>
+
+  <text class="fn" x="532" y="187" fill="#8250df">identity</text>
+  <text class="rule" x="532" y="203">version · date · status</text>
+
+  <text class="fn" x="532" y="239" fill="#1a7f37">summary</text>
+  <text class="rule" x="532" y="255">what and for whom · ≤ 30 words</text>
+
+  <text class="fn" x="532" y="291" fill="#0f6c75">navigation</text>
+  <text class="rule" x="532" y="307">one link per H2</text>
+
+  <text class="fn" x="532" y="384" fill="#7d4e00">body</text>
+  <text class="rule" x="532" y="400">text and semantic IDs</text>
+
+  <text class="fn" x="532" y="475" fill="#bc4c00">decoding</text>
+  <text class="rule" x="532" y="491">prefix → meaning</text>
+
+  <text class="fn" x="532" y="525" fill="#cf222e">deviations</text>
+  <text class="rule" x="532" y="541">only real exceptions</text>
+
+  <text class="fn" x="532" y="575" fill="#57606a">traceability</text>
+  <text class="rule" x="532" y="591">newest first · version aligned</text>
+</svg>

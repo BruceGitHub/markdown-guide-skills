@@ -15,6 +15,12 @@ Markdown is portable as a file format, but not as a document convention. Teams, 
 
 A Markdown file can carry its own rules. Instead of keeping every instruction in an external skill or repeating it in each conversation, the document states in its own text how it should be read, updated, and closed. The rules travel with the file: anyone who opens it, human or model, has the operating instructions at hand.
 
+The shift is simple: rules stop being an external input and become part of the document.
+
+![A Markdown document with its typical sections, each pointing to the function it performs and the rule it carries](./assets/live-markdown.svg)
+
+The rectangle is the file. Each section points to the function it performs, and the arrow carries the rule that governs it. A reader entering the file does not need a separate manual.
+
 This does not change the document specification. There is no new section, field, or schema: the rules are plain Markdown, written where they apply. A template can bake them into its skeleton; a document can state them inline; an existing section can hold them.
 
 Two instructions that are easy to repeat in every session:
