@@ -11,6 +11,25 @@ Reusable OpenCode skill for creating and maintaining Markdown documents with a c
 
 Markdown is portable as a file format, but not as a document convention. Teams, repositories, and tools use different structures for metadata, navigation, decisions, and history. This skill defines a known and defined schema for those conventions. With that schema, a Markdown document can be validated, parsed, and moved from one place to another without losing context, links, or traceability.
 
+## Live Markdown
+
+A Markdown file can carry its own rules. Instead of keeping every instruction in an external skill or repeating it in each conversation, the document states in its own text how it should be read, updated, and closed. The rules travel with the file: anyone who opens it, human or model, has the operating instructions at hand.
+
+This does not change the document specification. There is no new section, field, or schema: the rules are plain Markdown, written where they apply. A template can bake them into its skeleton; a document can state them inline; an existing section can hold them.
+
+Two instructions that are easy to repeat in every session:
+
+- Close an item with strikethrough, and keep it.
+- Move struck-through items to the bottom of their list.
+
+Written in the file, they are read exactly where the work happens, so the model applies them without being told again.
+
+This is intentionally conceptual, not executable. Markdown does not run anything. The value is that the document describes its own invariants in the language a model already reads, so the rules sit at the point of use instead of in a separate manual.
+
+The rules are local and editable. They can specialize the conventions for one file: the read order, the naming of items, the closing convention, the owner. Editing them is expected, not a violation. Keep them short: a long rulebook inside the file is ignored as easily as it is written.
+
+The result is a document that is self-contained, portable, and self-describing.
+
 ## Install
 
 Copy only the skill folder into an OpenCode skill source:
